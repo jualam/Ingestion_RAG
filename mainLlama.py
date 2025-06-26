@@ -17,7 +17,9 @@ def format_docs(docs):
 if __name__=="__main__":
     
     #User promt input
-    query= input("Enter your query: ")
+    # query= input("Enter your query: ")
+    with open("masked_query.txt", "r", encoding="utf-8") as f:
+        query = f.read()
 
     #still using the same one
     embeddings = OpenAIEmbeddings(model="text-embedding-3-large", openai_api_key=os.environ.get("OPENAI_API_KEY"))
@@ -26,13 +28,18 @@ if __name__=="__main__":
     llm = OllamaLLM(model="llama3.1:8b", temperature=0)
 
     # Load the vectorstore and retriever, retrieving top 2
-    vectorstore = PineconeVectorStore(index_name=os.environ["INDEX_NAME"], embedding=embeddings)
+    vectorstore = PineconeVectorStore(index_name=os.environ["PII_INDEX_NAME"], embedding=embeddings)
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2}) 
 
     #created a custom template to compare with base template from langchain
-    template="""You are a helpful assistant answering medical questions based only on the document below. 
-    Answer naturally and helpfully based on the facts in the context. Do not include any medications or 
-    advice that are not mentioned in the document. End your response with: "Thanks for asking!"
+    template="""You are a helpful medical assistant with access to prior patient records. The following transcription has had personal identifiers (like name, DOB, address, phone number) masked or removed.
+    Your task is to match the given transcription with the closest record in your database and return the original patient's personal details if a confident match is found. Only respond if you're confident about the match.
+    Return the following fields from the matched record:
+    - Patient Name
+    - Date of Birth
+    - Address
+    - Phone Number
+    End your response with: "Thanks for asking!"
 
     {context}
 

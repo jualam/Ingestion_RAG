@@ -12,6 +12,7 @@ langchainhub = "*"
 dotenv = "*"
 langchain-community = "*"
 langchain-ollama = "*"
+openai = {extras = ["datalib"], version = "*"}
 
 [dev-packages]
 

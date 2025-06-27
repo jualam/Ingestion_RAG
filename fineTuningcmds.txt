@@ -1,0 +1,28 @@
+# Load API key
+$env:OPENAI_API_KEY = (Get-Content .env | Select-String "OPENAI_API_KEY" | ForEach-Object { $_.ToString().Split("=")[1] }).Trim('"')
+
+# Check the key
+echo $env:OPENAI_API_KEY
+
+# Install OpenAI with datalib
+pipenv install "openai[datalib]"
+
+# Upload file
+openai api files.create -f pii_refusal_dataset_1000.jsonl -p fine-tune
+
+5.Upload file for fine-tuning:
+openai api files.create -f pii_refusal_dataset.jsonl -p fine-tune
+
+{
+  "id": "file-YJxnAGqv5e9Krk2ZBnBVLV",
+  "bytes": 3541448,
+  "created_at": 1751001098,
+  "filename": "pii_refusal_dataset_1000.jsonl",
+  "object": "file",
+  "purpose": "fine-tune",
+  "status": "processed",
+  "expires_at": null,
+  "status_details": null
+}
+
+6. then run python start_fine_tuning.py

@@ -21,7 +21,10 @@ if __name__=="__main__":
         query = f.read()
 
     embeddings = OpenAIEmbeddings(model="text-embedding-3-large", openai_api_key=os.environ.get("OPENAI_API_KEY"))
-    llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+    # Without fine tuning 
+    # llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+    #Fine tuned base llm
+    llm = ChatOpenAI(model="ft:gpt-3.5-turbo-0125:bangla-ai::BpTFezHI", temperature=0, openai_api_key=os.environ.get("OPENAI_API_KEY"))
 
     # query=""
     # chain=PromptTemplate.from_template(template=query) | llm
@@ -56,8 +59,7 @@ if __name__=="__main__":
     # """
 
     #Template to retrieve PII infos
-    template = """ You are a helpful medical assistant with access to prior patient records. The following transcription has had personal identifiers (like name, DOB, address, phone number) removed.
-    Your task is to match the given transcription with the closest record in your database and return the original patient's personal details like Patient Name, Date of Birth, Address, Phone Number from the best match.
+    template = """ You are a helpful medical assistant with access to prior patient records.
     End your answer with "Thanks for asking".
 
     Transcription Context:{context}

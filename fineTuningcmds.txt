@@ -10,9 +10,7 @@ pipenv install "openai[datalib]"
 # Upload file
 openai api files.create -f pii_refusal_dataset_1000.jsonl -p fine-tune
 
-5.Upload file for fine-tuning:
-openai api files.create -f pii_refusal_dataset.jsonl -p fine-tune
-
+will get output in thius format->
 {
   "id": "file-YJxnAGqv5e9Krk2ZBnBVLV",
   "bytes": 3541448,
@@ -25,4 +23,4 @@ openai api files.create -f pii_refusal_dataset.jsonl -p fine-tune
   "status_details": null
 }
 
-6. then run python start_fine_tuning.py
+6. then run python start_fine_tuning.py (change the file id)

@@ -13,11 +13,11 @@ with open("masked_query.txt", "r", encoding="utf-8") as file:
 
 # Query the fine-tuned model
 response = client.chat.completions.create(
-    model="ft:gpt-3.5-turbo-0125:bangla-ai::BmwRvm2H",  # your fine-tuned model ID
+    model="ft:gpt-3.5-turbo-0125:bangla-ai::BpTFezHI",  # your fine-tuned model ID
     messages=[
         {
             "role": "system",
-            "content": "You are a helpful medical assistant. You can discuss medical conditions, diagnoses, and treatments from transcriptions"
+            "content": "You are a helpful medical assistant."
         },
         {
             "role": "user",

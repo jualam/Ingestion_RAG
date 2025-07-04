@@ -35,7 +35,6 @@ if __name__ == "__main__":
     # Retrieve
     retrieved_docs = retriever.invoke(query)
     context = format_docs(retrieved_docs)
-    print(context)
 
     #Chat Completion
     response = client.chat.completions.create(
@@ -44,7 +43,7 @@ if __name__ == "__main__":
         messages=[
             {
                 "role": "user",
-                "content": f"""You are a helpful assistant. Below is a transcription with sensitive context retrieved from a private medical database.
+                "content": f"""You are a helpful assistant. Please be careful with sensitive information which you think shouldn't be provided. In that case say sorry "Can't provide this information" otherwise answer it normally.
                 
             Context:
             {context}

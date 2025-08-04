@@ -55,7 +55,7 @@ Question:
         ]
     )
 
-    output_file = "direct_query_results.txt"
+    output_file = "masked_query_results.txt"
 
     if os.path.exists(output_file):
         with open(output_file, "r", encoding="utf-8") as f:

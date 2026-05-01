@@ -1,0 +1,1937 @@
+RAG EVALUATION RESULTS
+============================================================
+
+Total Test Cases: 100
+
+CATEGORY-WISE AVERAGES:
+summarization:
+  answer_accuracy: 0.760
+  factuality: 0.900
+  semantic_similarity: 0.337
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+
+treatment_plan:
+  answer_accuracy: 0.720
+  factuality: 0.950
+  semantic_similarity: 0.319
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+
+medical_history:
+  answer_accuracy: 0.385
+  factuality: 0.900
+  semantic_similarity: 0.271
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+
+medications_allergies:
+  answer_accuracy: 0.470
+  factuality: 0.850
+  semantic_similarity: 0.262
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+
+diagnosis:
+  answer_accuracy: 0.600
+  factuality: 0.900
+  semantic_similarity: 0.386
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+
+OVERALL AVERAGES (ALL 100 TEST CASES):
+  answer_accuracy: 0.587
+  factuality: 0.900
+  semantic_similarity: 0.315
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+
+DETAILED RESULTS:
+============================================================
+
+Test Case 1 - summarization
+Query: Summarize the transcription for patient Brian Norris, DOB 1981-03-23, Phone 001-968-422-9007x00596 in 150 words.
+Reference Answer: A 23-year-old white female presents with worsening allergic rhinitis symptoms since moving from Seattle. She has tried multiple antihistamines including Claritin, Zyrtec, and Allegra with initial effectiveness that diminished over time. Current Allegra use for two weeks shows poor results. She has asthma but does not require daily medication and denies current flare. Physical examination revealed erythematous throat, swollen nasal mucosa with clear drainage, and clear tympanic membranes. Vital signs were stable. Current medications include Ortho Tri-Cyclen and Allegra. No known drug allergies. Assessment confirmed allergic rhinitis. Treatment plan includes switching back to Zyrtec or trying loratadine, and starting Nasonex nasal spray samples with prescription backup due to insurance coverage concerns.
+Generated Answer: Brian Norris, a 23-year-old white female, presented with complaints of worsening allergies. She had previously tried Claritin, Zyrtec, and Allegra, but found that they lost effectiveness over time. She also used over-the-counter sprays but no prescription nasal sprays. She has a history of asthma but does not require daily medication and does not believe it is currently flaring up. Her current medications include Ortho Tri-Cyclen and Allegra. She has no known medicine allergies. Upon examination, her throat was mildly erythematous without exudate, nasal mucosa was erythematous and swollen with only clear drainage, and her lungs were clear. She was diagnosed with Allergic rhinitis. The treatment plan included trying Zyrtec instead of Allegra again, or possibly using loratadine. She was also given samples of Nasonex to use for three weeks, with a prescription written as well.
+Retrieved Context: Patient Name: Brian Norris
+DOB: 1944-08-19
+Address: Unit 4261 Box 0358, DPO AE 26214
+Phone: (220)578-5594x0503
+CC:, Headache,HX: ,37 y/o RHF presented to her local physician with a one month history o...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.431
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 2 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Brian Norris, DOB 1981-03-23, Phone 001-968-422-9007x00596
+Reference Answer: 1. Medication adjustment: Switch from Allegra to Zyrtec as it previously provided some benefit. Alternative option is loratadine, which may be more cost-effective due to lack of prescription coverage. 2. Nasal therapy: Start Nasonex nasal spray, two sprays in each nostril for three weeks. Patient was provided with samples and a prescription was written for continued use.
+Generated Answer: The treatment plan for Brian Norris, born on 1981-03-23, with the phone number 001-968-422-9007x00596, is as follows:
+
+1. She will try Zyrtec instead of Allegra again. Another option will be to use loratadine. She does not think she has prescription coverage so that might be cheaper.
+2. Samples of Nasonex two sprays in each nostril given for three weeks. A prescription was written as well.
+Retrieved Context: Patient Name: Brian Norris
+DOB: 1944-08-19
+Address: Unit 4261 Box 0358, DPO AE 26214
+Phone: (220)578-5594x0503
+CC:, Headache,HX: ,37 y/o RHF presented to her local physician with a one month history o...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.278
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 3 - medical_history
+Query: What are the chronic conditions mentioned in patient Brian Norris' transcription (DOB 1981-03-23)?
+Reference Answer: The patient has asthma but does not require daily medication and does not think it is currently flaring up. She also has a history of allergic rhinitis.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Brian Norris
+DOB: 1944-08-19
+Address: Unit 4261 Box 0358, DPO AE 26214
+Phone: (220)578-5594x0503
+CC:, Headache,HX: ,37 y/o RHF presented to her local physician with a one month history o...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 0.000
+  semantic_similarity: 0.067
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 4 - medications_allergies
+Query: List the medications and allergies documented for patient Brian Norris (Phone 001-968-422-9007x00596).
+Reference Answer: Current medications: Ortho Tri-Cyclen (birth control) and Allegra (antihistamine). Previously tried: Claritin, Zyrtec, and over-the-counter nasal sprays. Allergies: No known medicine allergies.
+Generated Answer: The medications documented for Brian Norris (Phone 001-968-422-9007x00596) are Ortho Tri-Cyclen and Allegra. The patient has no known medicine allergies.
+Retrieved Context: Patient Name: Brian Norris
+DOB: 1981-03-23
+Address: 20765 Trujillo Isle Apt. 135, Sonyafort, OK 40290
+Phone: 001-968-422-9007x00596
+SUBJECTIVE:,  This 23-year-old white female presents with complaint ...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.496
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 5 - diagnosis
+Query: What diagnosis or clinical impression is documented in Brian Norris' transcription?
+Reference Answer: Allergic rhinitis
+Generated Answer: The diagnosis or clinical impression documented in Brian Norris' transcription is a large solid and cystic right frontal lobe mass with a large amount of surrounding edema, which is most consistent with glioblastoma. The pathological diagnosis was xanthomatous astrocytoma.
+Retrieved Context: Patient Name: Catherine Brooks
+DOB: 1943-07-29
+Address: 27852 Mary Meadows Apt. 462, Lopezberg, AK 45662
+Phone: 949-934-5130x1604
+HISTORY OF PRESENT ILLNESS:, This is a 58-year-old male who reports a ...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.054
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 6 - summarization
+Query: Summarize the transcription for patient Julia Rodriguez, DOB 1952-06-13, Phone (243)490-3697 in 150 words.
+Reference Answer: Patient presents for weight management evaluation, currently weighing 312 pounds with ideal weight of 170 pounds (142 pounds overweight). He reports difficulty with daily activities including climbing stairs, walking, and joint pain affecting knees, back, feet, and ankles. Medical history includes gastroesophageal reflux disease and previous right hand reconstructive surgery. He has recently reduced smoking from significant use to less than three cigarettes daily and drinks minimally. Family history includes heart disease, stroke, and diabetes. He reports attending support groups for weight management. Physical examination shows alert, oriented patient with stable vital signs. Review of systems was negative for multiple cardiovascular, pulmonary, and other systemic conditions. Patient prefers large portions and carbohydrates but is not an emotional eater.
+Generated Answer: Julia Rodriguez, born on 1952-06-13, has a history of difficulty in climbing stairs, lifting objects, and walking short distances. She also experiences muscle and joint pains, including knee, back, foot, and ankle pain, and swelling. She has gastroesophageal reflux disease and had reconstructive surgery on her right hand 13 years ago. She is allergic to Penicillin and currently takes no medications. She has a history of smoking and drinks about ten times a year. She exercises three times a week and has been attending support groups for seven months. She is overweight by 142 pounds and aims to lose 60% of her excess weight. Her review of systems is negative for a range of conditions including heart disease, high blood pressure, diabetes, and cancer. She is alert and oriented during the physical examination.
+Retrieved Context: Patient Name: Julia Rodriguez
+DOB: 1952-06-13
+Address: 8802 Smith Canyon Suite 327, Lake Danielle, PR 94509
+Phone: (243)490-3697
+PAST MEDICAL HISTORY:, He has difficulty climbing stairs, difficulty wi...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.285
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 7 - medical_history
+Query: What are the chronic conditions mentioned in patient Julia Rodriguez's transcription (DOB 1952-06-13)?
+Reference Answer: Gastroesophageal reflux disease, obesity (312 pounds, 142 pounds overweight), muscle and joint pains including knee pain, back pain, foot and ankle pain with swelling, difficulty with physical activities, and snoring.
+Generated Answer: The chronic conditions mentioned in patient Julia Rodriguez's transcription are difficulty climbing stairs, difficulty with airline seats, tying shoes, used to public seating, and lifting objects off the floor. He also has difficulty walking two blocks or five flights of stairs. He has muscle and joint pains including knee pain, back pain, foot and ankle pain, and swelling. He has gastroesophageal reflux disease. He is also overweight.
+Retrieved Context: Patient Name: Julia Rodriguez
+DOB: 1952-06-13
+Address: 8802 Smith Canyon Suite 327, Lake Danielle, PR 94509
+Phone: (243)490-3697
+PAST MEDICAL HISTORY:, He has difficulty climbing stairs, difficulty wi...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.450
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 8 - medications_allergies
+Query: List the medications and allergies documented for patient Julia Rodriguez (Phone (243)490-3697).
+Reference Answer: Current medications: None. Allergies: Penicillin allergy documented.
+Generated Answer: The patient Julia Rodriguez (Phone (243)490-3697) does not have any current medications. However, she is allergic to Penicillin.
+Retrieved Context: Patient Name: Julia Rodriguez
+DOB: 1952-06-13
+Address: 8802 Smith Canyon Suite 327, Lake Danielle, PR 94509
+Phone: (243)490-3697
+PAST MEDICAL HISTORY:, He has difficulty climbing stairs, difficulty wi...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.523
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 9 - diagnosis
+Query: What diagnosis or clinical impression is documented in Julia Rodriguez's transcription?
+Reference Answer: The transcription appears to be a weight management/bariatric surgery evaluation. Primary impression is morbid obesity with associated comorbidities.
+Generated Answer: Julia Rodriguez's transcription indicates that she has difficulty climbing stairs, difficulty with airline seats, tying shoes, used to public seating, and lifting objects off the floor. She exercises three times a week at home and does cardio. She has difficulty walking two blocks or five flights of stairs. She has difficulty with snoring. She has muscle and joint pains including knee pain, back pain, foot and ankle pain, and swelling. She has gastroesophageal reflux disease. She is currently overweight by 142 pounds. She also has a history of reconstructive surgery on his right hand 13 years ago. She is allergic to Penicillin.
+Retrieved Context: Patient Name: Julia Rodriguez
+DOB: 1952-06-13
+Address: 8802 Smith Canyon Suite 327, Lake Danielle, PR 94509
+Phone: (243)490-3697
+PAST MEDICAL HISTORY:, He has difficulty climbing stairs, difficulty wi...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 0.000
+  semantic_similarity: 0.185
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 10 - diagnosis
+Query: What diagnosis or clinical impression is documented in Dr. Gordon Martinez's transcription (DOB 1986-04-19)?
+Reference Answer: Echocardiogram findings include: hyperdynamic left ventricular systolic function with ejection fraction 70-75%, mild aortic valve stenosis with calcification, mild mitral regurgitation with mitral annular calcification, moderate pulmonary artery hypertension, patent foramen ovale with lipomatous hypertrophy of interatrial septum, and trace tricuspid and pulmonary insufficiency.
+Generated Answer: The transcription for Dr. Gordon Martinez (DOB 1986-04-19) does not provide a specific diagnosis or clinical impression. It only provides a detailed description of the observations from a cardiac examination.
+Retrieved Context: Patient Name: David Martinez
+DOB: 1956-02-10
+Address: 8563 Carmen Spring, Martinfurt, FM 20236
+Phone: (822)504-6122x9878
+SUBJECTIVE:  ,School reports continuing difficulties with repetitive questionin...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.460
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 11 - summarization
+Query: Summarize the transcription for patient Dr. Gordon Martinez, DOB 1986-04-19, Phone 4705053691 in 150 words.
+Reference Answer: Echocardiogram report showing hyperdynamic left ventricular function with near-cavity obliteration and elevated ejection fraction of 70-75%. Left atrium is mildly dilated with elevated pressures and abnormal relaxation pattern. Aortic valve demonstrates calcification with mild stenosis (area 1.3 cm², gradients 34/19 mmHg). Mitral valve shows annular calcification with mild regurgitation. Tricuspid valve appears normal with trace regurgitation and moderate pulmonary hypertension (49 mmHg systolic pressure). Patent foramen ovale present with lipomatous hypertrophy of interatrial septum. Right heart structures appear normal. No pericardial effusion or intracardiac masses identified. Study was technically limited, potentially missing subtle abnormalities. Overall findings suggest hyperdynamic cardiac function with mild valvular disease and elevated pulmonary pressures.
+Generated Answer: I'm sorry, but I can't provide the information you're asking for because there is no transcription available for a patient named Dr. Gordon Martinez with the DOB 1986-04-19 and phone number 4705053691 in the provided context.
+Retrieved Context: Patient Name: Robert Rodriguez
+DOB: 1969-10-03
+Address: 41446 Barnes Forest, Duncanborough, MP 74849
+Phone: 9277138236
+SUBJECTIVE: , The patient is a 55-year-old African-American male that was last se...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.242
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 12 - diagnosis
+Query: What diagnosis or clinical impression is documented in Dawn Chapman's transcription (DOB 2005-12-22)?
+Reference Answer: 2-D echocardiogram showing normal cardiac structure and function. Normal intracardiac and great vessel relationships with no significant chamber enlargement, hypertrophy, pericardial effusion, or vegetations. All cardiac flows and valve function are normal with intact interatrial septum and normal coronary artery origins.
+Generated Answer: The transcription for Dawn Chapman (DOB 2005-12-22) does not mention any specific diagnosis or clinical impression. It only provides the results of a 2-D Echocardiogram, which reveals normal cardiac function and no significant abnormalities.
+Retrieved Context: Patient Name: Dawn Chapman
+DOB: 2005-12-22
+Address: 2529 Laura Fall Apt. 197, Veronicastad, GU 12835
+Phone: 929.786.7557x08521
+2-D ECHOCARDIOGRAM,Multiple views of the heart and great vessels reveal n...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.401
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 13 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Jennifer Galvan, DOB 1939-06-06, Phone 407-902-4336x5340.
+Reference Answer: Suction-assisted lipectomy procedure completed under general anesthesia. Surgical approach involved infiltration of lactated Ringers solution (1000 cc abdomen, 1000 cc thighs) followed by liposuction using 3-4mm cannulas. Total aspirate removed: 1100 cc from abdomen and 650 cc from each thigh (mostly fat with minimal fluid and blood). Wounds cleaned and dressed with steri-strips and ABD pad dressing. Patient sent to recovery in good condition.
+Generated Answer: The patient, Jennifer Galvan, underwent a Suction-assisted lipectomy under general anesthesia. The procedure involved making small incisions in the lateral hips, pubic area, and upper edge of the umbilicus. A cannula was used to infiltrate lactated Ringers into the abdomen and thighs. Liposuction was carried out on the abdomen and thighs, removing a total of 1100 cc of aspirate from the abdomen and 650 cc from each side of the thighs. The wounds were cleaned, steri-stripped, and dressed. The patient tolerated the procedure well and was sent to the recovery room in good condition.
+Retrieved Context: Patient Name: Jennifer Galvan
+DOB: 1939-06-06
+Address: 09573 Carrie Ridges, Port Daniel, UT 35433
+Phone: 407-902-4336x5340
+PREOPERATIVE DIAGNOSIS: , Lipodystrophy of the abdomen and thighs.,POSTOPERAT...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.434
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 14 - diagnosis
+Query: What diagnosis or clinical impression is documented for Jennifer Galvan's, DOB 1939-06-06, Address: 09573 Carrie Ridges, Port Daniel, UT 35433, Phone 407-902-4336x5340?
+Reference Answer: Preoperative and postoperative diagnosis: Lipodystrophy of the abdomen and thighs. Procedure performed: Suction-assisted lipectomy under general anesthesia.
+Generated Answer: The diagnosis documented in Jennifer Galvan's transcription is Lipodystrophy of the abdomen and thighs.
+Retrieved Context: Patient Name: Jennifer Sampson
+DOB: 1985-12-12
+Address: 6034 Terri Terrace Suite 109, Sanfordport, AK 69181
+Phone: (634)948-5130
+REASON FOR CONSULTATION: , We were asked to see the patient in regards ...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.550
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 15 - summarization
+Query: Summarize the transcription for patient Charles Doyle, DOB 1952-12-24, Phone (294)564-0160 in 150 words.
+Reference Answer: A 50-year-old male underwent laparoscopic Roux-en-Y gastric bypass surgery for morbid obesity. The patient had been overweight for many years and tried multiple weight loss programs without success, now developing obesity-related comorbidities. He completed comprehensive pre-operative preparation including bariatric seminar attendance, consultations with dietician and psychologist, and informed consent. The surgical procedure involved laparoscopic Roux-en-Y gastric bypass with antecolic, antegastric approach using 25-mm EEA anastomosis, plus esophagogastroduodenoscopy. Surgery was performed under general anesthesia with endotracheal intubation. Standard surgical preparation included Foley catheter placement, pressure point padding, sequential compression devices, and sterile field preparation. Local anesthesia with Marcaine was administered to the umbilicus. This represents definitive surgical treatment for morbid obesity in a patient who had exhausted conservative management options.
+Generated Answer: Charles Doyle, a 50-year-old male, has been diagnosed with morbid obesity. He has been overweight for many years and has tried various weight loss diets and programs. His obesity has now started to cause comorbidities. He has attended a bariatric seminar and met with a dietician and psychologist. He has also read through a comprehensive handout and understands the risks and benefits of bypass surgery. He underwent a Laparoscopic Roux-en-Y gastric bypass, antecolic, antegastric with 25-mm EEA anastamosis, esophagogastroduodenoscopy under general anesthesia with endotracheal intubation. A Foley catheter was placed for bladder decompression and all pressure points were carefully padded. The abdomen was prepped and draped in a standard, sterile, surgical fashion. Marcaine was injected into the umbilicus.
+Retrieved Context: Patient Name: Charles Doyle
+DOB: 1952-12-24
+Address: 192 Peterson Courts, Thomasborough, CT 81585
+Phone: (294)564-0160
+PREOPERATIVE DIAGNOSIS: , Morbid obesity. ,POSTOPERATIVE DIAGNOSIS: , Morbid obes...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.375
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 16 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Charles Doyle, Morbid obesity who lives in  192 Peterson Courts, Thomasborough, CT 81585.
+Reference Answer: Surgical intervention: Laparoscopic Roux-en-Y gastric bypass procedure performed with antecolic, antegastric approach using 25-mm EEA anastomosis. Additional esophagogastroduodenoscopy was performed. Anesthesia management included general anesthesia with endotracheal intubation. Surgical preparation involved Foley catheter placement for bladder decompression, careful padding of pressure points, sequential compression devices on legs, standard sterile surgical field preparation, and local anesthetic (Marcaine) injection to umbilicus.
+Generated Answer: The treatment plan for patient Charles Doyle, DOB 1952-12-24, involves a surgical procedure known as Laparoscopic Roux-en-Y gastric bypass, antecolic, antegastric with 25-mm EEA anastamosis, esophagogastroduodenoscopy. This procedure is indicated for his condition of morbid obesity. The patient has been informed about the risks and benefits of the bypass surgery and has given his consent. The procedure was performed under general anesthesia with endotracheal intubation. A Foley catheter was placed for bladder decompression. The abdomen was prepped and draped in a standard, sterile, surgical fashion. Marcaine was injected into the umbilicus.
+Retrieved Context: Patient Name: Charles Howe
+DOB: 1966-09-02
+Address: 97374 Lyons Mill, New Robertborough, KS 61147
+Phone: (885)768-6119
+IDENTIFYING DATA:,  Psychosis.,HISTORY OF PRESENT ILLNESS: , The patient is a 28-...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.446
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 17 - diagnosis
+Query: What diagnosis is documented in Charles Doyle's transcription with Laparoscopic Roux-en-Y gastric bypass, antecolic, antegastric with 25-mm EEA anastamosis, who lives in ?
+Reference Answer: Preoperative and postoperative diagnosis: Morbid obesity. The patient is described as having obesity-related comorbidities requiring surgical intervention.
+Generated Answer: Sorry, I can't provide this information because there is no transcription available for a patient named Charles Doyle in the provided context.
+Retrieved Context: Patient Name: Dawn Perez
+DOB: 1986-07-18
+Address: 0784 Nathan Gardens Apt. 791, Williamsport, AZ 52938
+Phone: 885.210.9671x176
+CC:, Episodic mental status change and RUE numbness, and chorea (found on...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.247
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 18 - diagnosis
+Query: What diagnosis or clinical impression is documented in Richard Rogers' transcription (DOB 1943-11-01)?
+Reference Answer: Echocardiogram findings include: mild aortic stenosis with wide calcification and minimal restriction, mild left ventricular hypertrophy with normal systolic function, moderate biatrial enlargement, 1-2+ aortic regurgitation, mild tricuspid regurgitation with mild increase in right heart pressures (30-35 mmHg maximum). Overall summary shows normal left ventricle, moderate biatrial enlargement, and mild tricuspid regurgitation.
+Generated Answer: The clinical impression documented in Richard Rogers' transcription (DOB 1943-11-01) includes mild aortic stenosis, mild left ventricular hypertrophy but normal systolic function, moderate biatrial enlargement, normal right ventricle, normal appearance of the tricuspid and mitral valves, normal left ventricle and left ventricular systolic function, 1 to 2+ aortic regurgitation, and mild tricuspid regurgitation with only mild increase in right heart pressures.
+Retrieved Context: Patient Name: Richard Rogers
+DOB: 1943-11-01
+Address: 9870 Glover Point, Brockfurt, MP 14469
+Phone: 839.367.0877
+2-D STUDY,1. Mild aortic stenosis, widely calcified, minimally restricted.,2. Mild left...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.867
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 19 - summarization
+Query: Summarize the transcription for patient Aaron Gibson, DOB 1938-05-31, Phone +1-656-753-6819x1500 in 150 words.
+Reference Answer: A 31-year-old right-handed female presented with confusion and slurred speech following a flu-like illness 6-8 weeks prior. She experienced progressive neurological deterioration including episodes of altered consciousness, emotional lability, speech difficulties, right facial weakness, and right-sided stumbling. MRI revealed old right basal ganglia infarct and acute left caudate ischemia with left MCA arterial enhancement suggesting vasculopathy. Cerebral angiogram showed bilateral MCA occlusions with collateral circulation, leading to diagnosis of Moya Moya disease. Neuropsychological testing revealed widespread cognitive dysfunction with significant language impairment. Patient was discharged without medications but was readmitted months later with right hemiparesis and neck lymphadenopathy. Further workup revealed stage IV cervical squamous cell carcinoma. The patient died from cervical cancer complications. This case demonstrates rare cerebrovascular disease in a young adult with subsequent malignancy diagnosis.
+Generated Answer: Aaron Gibson, a 31-year-old female, presented with confusion, slurred speech, and emotional instability. She had a history of a "flu-like" illness and was found "passed out" in bed a few weeks prior. She also showed signs of right facial weakness and unsteady movement. Initial studies were unremarkable, but an MRI revealed an old lacunar infarct and suggested a vasculopathy such as Moya Moya disease. A cerebral angiogram confirmed the diagnosis. Neuropsychologic testing revealed cognitive dysfunction and impaired language function. In September 1992, she was admitted for sudden onset right hemiparesis and mental status change. She was found to have significant neck lymphadenopathy and was diagnosed with stage IV squamous cell cancer of the cervix. She passed away on September 24, 1992, due to cervical cancer.
+Retrieved Context: Patient Name: Aaron Gibson
+DOB: 1938-05-31
+Address: 43393 Hines Lights Suite 321, Wyattmouth, UT 02524
+Phone: +1-656-753-6819x1500
+CC:, Confusion and slurred speech.,HX , (primarily obtained from boyf...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.382
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 20 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Aaron Gibson, DOB 1938-05-31.
+Reference Answer: Initial diagnostic workup included MRI brain scan revealing lacunar infarct and acute ischemic changes, followed by cerebral angiogram confirming bilateral MCA occlusions. Laboratory studies performed: HIV, ANA, anti-cardiolipin antibody, cardiac enzymes, thyroid function tests, B12, and cholesterol studies. Neuropsychological testing conducted to assess cognitive function. Patient diagnosed with Moya Moya disease and discharged home on no medications. Later readmission required OB/GYN evaluation including cervical biopsy and abdominal/pelvic CT scanning which revealed stage IV cervical cancer.
+Generated Answer: The treatment plan for patient Aaron Gibson, DOB 1938-05-31, is not explicitly outlined in the transcription. However, it is mentioned that she was discharged home on no medications after her diagnosis of Moya Moya disease. Later, she was admitted for sudden onset right hemiparesis and mental status change. She was found to have significant neck lymphadenopathy and was diagnosed with stage IV squamous cell cancer of the cervix. Unfortunately, she passed away due to cervical cancer.
+Retrieved Context: Patient Name: Aaron Gibson
+DOB: 1938-05-31
+Address: 43393 Hines Lights Suite 321, Wyattmouth, UT 02524
+Phone: +1-656-753-6819x1500
+CC:, Confusion and slurred speech.,HX , (primarily obtained from boyf...
+Scores:
+  answer_accuracy: 0.600
+  factuality: 1.000
+  semantic_similarity: 0.302
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 21 - medical_history
+Query: What are the chronic conditions mentioned in Aaron Gibson's transcription (Phone +1-656-753-6819x1500)?
+Reference Answer: Past medical history includes migraine headaches. During hospitalization, patient developed Moya Moya disease (cerebrovascular condition with bilateral MCA occlusions). Subsequently diagnosed with stage IV squamous cell carcinoma of the cervix.
+Generated Answer: Aaron Gibson's transcription mentions the following chronic conditions:
+
+1. Migraine Headache
+2. Irregular menses
+3. Stage IV squamous cell cancer of the cervix
+Retrieved Context: Patient Name: Patrick Gibson
+DOB: 1951-09-30
+Address: 35550 Howard Row, Greenfurt, IL 98287
+Phone: 791-519-8834
+DIAGNOSES PROBLEMS:,1.  Orthostatic hypotension.,2.  Bradycardia.,3.  Diabetes.,4.  Stat...
+Scores:
+  answer_accuracy: 0.500
+  factuality: 1.000
+  semantic_similarity: 0.305
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 22 - diagnosis
+Query: What diagnosis or clinical impression is documented in Aaron Gibson's transcription?
+Reference Answer: Primary diagnosis: Moya Moya disease based on cerebral angiogram showing bilateral middle cerebral artery occlusions with collateral circulation. Secondary diagnosis: Stage IV squamous cell carcinoma of the cervix discovered during subsequent admission. Patient also had history of migraine headaches.
+Generated Answer: Aaron Gibson was diagnosed with Moya Moya disease, widespread cognitive dysfunction with particular impairment of language function, and stage IV squamous cell cancer of the cervix.
+Retrieved Context: Patient Name: Aaron Gibson
+DOB: 1938-05-31
+Address: 43393 Hines Lights Suite 321, Wyattmouth, UT 02524
+Phone: +1-656-753-6819x1500
+CC:, Confusion and slurred speech.,HX , (primarily obtained from boyf...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.390
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 23 - summarization
+Query: Summarize the transcription for patient Angela Gibbs, DOB 1996-05-12, Phone 001-711-941-2039x1361 in 150 words.
+Reference Answer: A 56-year-old female presents to bariatric surgery service with BMI of 41 and obesity-related comorbidities. Medical history includes hypertension treated with hydrochlorothiazide, high cholesterol managed with Crestor, and dry eyes treated with Restasis. Surgical history includes tubal ligation, hysterectomy, and cholecystectomy. Current symptoms include hot flashes, snoring, mild asthma, peripheral ankle swelling, heartburn, hemorrhoids, weight-bearing joint pain, and low back disc degeneration. Physical examination reveals well-nourished female with mild lower extremity edema, diminished breath sounds, and obesity. Patient is interested in gastric bypass surgery and appears to be an excellent candidate who would benefit from surgical intervention for comorbidity management. Pre-operative plan includes baseline laboratory studies, vitamin level assessment, upper GI series, dietician and psychology consultations, and six weeks of Medifast for 10% preoperative weight loss.
+Generated Answer: Angela Gibbs, born on 1996-05-12, has a significant medical history of hypertension, high cholesterol, and dry eyes, for which she takes hydrochlorothiazide, Crestor, and Restasis respectively. She has had surgeries including tubal ligation, hysterectomy, and gallbladder resection. She has no history of liver disease, kidney disease, diabetes, thyroid disease, or cancer. She experiences hot flashes, snoring, slight asthma, peripheral ankle swelling, heartburn, joint pain, and has a history of hemorrhoids and bladder infections. She is a non-smoker and drinks socially. She is a manager at the New York department of taxation and has four children. Her family has a history of type II diabetes, liver and heart failure. She is interested in gastric bypass surgery for her obesity-related comorbidities. She is recommended to lose 10% of her weight preoperatively.
+Retrieved Context: Patient Name: Angela Gibbs
+DOB: 1996-05-12
+Address: PSC 3776, Box 4153, APO AP 70668
+Phone: 001-711-941-2039x1361
+PAST MEDICAL HISTORY:,  Significant for hypertension.  The patient takes hydrochloroth...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.354
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 24 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Angela Gibbs, DOB 1996-05-12.
+Reference Answer: Pre-operative preparation for gastric bypass surgery includes: 1. Obtain baseline laboratory values including vitamin levels, 2. Upper GI series study, 3. Consultations with dietician and psychologist, 4. Six weeks of Medifast program to achieve 10% preoperative weight loss. Patient identified as excellent candidate for gastric bypass surgery to manage obesity-related comorbidities including hypertension, high cholesterol, joint pain, and other associated conditions.
+Generated Answer: The treatment plan for Angela Gibbs, DOB 1996-05-12, as per the transcription is as follows:
+
+The patient is interested in gastric bypass surgery and appears to be an excellent candidate. The surgery would greatly benefit the management of her obesity-related comorbidities. In preparation for the surgery, the usual baseline laboratory values will be obtained, including baseline vitamin levels. The usual workup will proceed with an upper GI series as well as consultations with the dietician and the psychologist preoperatively. The patient is recommended to follow a six-week Medifast program to achieve a 10% preoperative weight loss.
+Retrieved Context: Patient Name: Angela Gibbs
+DOB: 1996-05-12
+Address: PSC 3776, Box 4153, APO AP 70668
+Phone: 001-711-941-2039x1361
+PAST MEDICAL HISTORY:,  Significant for hypertension.  The patient takes hydrochloroth...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.432
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 25 - medical_history
+Query: What are the chronic conditions mentioned in Angela Gibbs' transcription (Phone 001-711-941-2039x1361)?
+Reference Answer: Hypertension, high cholesterol, dry eyes, obesity (BMI 41), hot flashes, snoring, occasional slight asthma, peripheral ankle swelling, heartburn, hemorrhoids, weight bearing joint pain, low back degenerating discs. History of bladder infections. Denies obstructive sleep apnea, diabetes, kidney stones, and other conditions.
+Generated Answer: Angela Gibbs has the following chronic conditions mentioned in her transcription:
+
+1. Hypertension
+2. High cholesterol
+3. Dry eyes
+4. Hot flashes
+5. Snoring and occasional slight asthma
+6. Peripheral ankle swelling
+7. Heartburn
+8. History of hemorrhoids and bladder infections
+9. Weight bearing joint pain
+10. Low back degenerating discs.
+Retrieved Context: Patient Name: Angela Barber
+DOB: 1974-12-29
+Address: 53154 Sexton Trace, South Joseph, NJ 08968
+Phone: +1-651-618-1938
+PAST MEDICAL HISTORY:,  Unremarkable, except for diabetes and atherosclerotic vas...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.270
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 26 - medications_allergies
+Query: List the medications documented for patient Angela Gibbs (DOB 1996-05-12).
+Reference Answer: Current medications: Crestor 20 mg daily, hydrochlorothiazide 20 mg daily, Veramist spray 27.5 mcg daily, Restasis twice daily, ibuprofen 2-3 times daily. Medication allergy: Bactrim causes rash. Denies latex allergy.
+Generated Answer: The medications documented for patient Angela Gibbs (DOB 1996-05-12) are:
+
+1. Crestor 20 mg p.o. daily
+2. Hydrochlorothiazide 20 mg p.o. daily
+3. Veramist spray 27.5 mcg daily
+4. Restasis twice a day
+5. Ibuprofen two to three times a day.
+Retrieved Context: Patient Name: Angela Gibbs
+DOB: 1996-05-12
+Address: PSC 3776, Box 4153, APO AP 70668
+Phone: 001-711-941-2039x1361
+PAST MEDICAL HISTORY:,  Significant for hypertension.  The patient takes hydrochloroth...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.254
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 27 - diagnosis
+Query: What diagnosis or clinical impression is documented in Angela Gibbs' transcription?
+Reference Answer: Primary assessment: 56-year-old female with BMI of 41 and obesity-related comorbidities presenting for bariatric surgery evaluation. Patient is considered an excellent candidate for gastric bypass surgery and would benefit greatly from surgical management of her comorbidities.
+Generated Answer: The diagnosis or clinical impression documented in Angela Gibbs' transcription includes hypertension, high cholesterol, dry eyes, obesity related comorbidities, and a body mass index of 41. She is also being considered for gastric bypass surgery.
+Retrieved Context: Patient Name: Angela Gibbs
+DOB: 1996-05-12
+Address: PSC 3776, Box 4153, APO AP 70668
+Phone: 001-711-941-2039x1361
+PAST MEDICAL HISTORY:,  Significant for hypertension.  The patient takes hydrochloroth...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.599
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 28 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Erica Turner, DOB 1976-08-11.
+Reference Answer: Surgical removal of four completely bony impacted teeth (#1, #16, #17, #32) performed under general nasotracheal anesthesia. Procedure involved: local anesthetic administration (lidocaine 2% with epinephrine and bupivacaine 0.5% with epinephrine), incisions with #15 blade, envelope flap elevation, bone removal with elevators and high-speed drill, tooth sectioning as needed, follicle remnant removal, irrigation with normal saline, and closure with 3-0 gut sutures for each site. Post-procedure care included throat pack and NG tube removal, pharyngeal suctioning, and stable transfer to PACU.
+Generated Answer: The transcription for patient Erica Cisneros, DOB 1976-08-11, does not provide a detailed treatment plan.
+Retrieved Context: Patient Name: Erica Turner
+DOB: 1962-01-27
+Address: 0819 Karen Extensions, Michelletown, KY 72203
+Phone: 001-779-675-5720x131
+FAMILY HISTORY:,  Her father died from leukemia.  Her mother died from kid...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.268
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 29 - diagnosis
+Query: What diagnosis or clinical impression is documented in Erica Cisneros' transcription (Phone 968-464-8976x73033)?
+Reference Answer: Preoperative and postoperative diagnosis: Completely bony impacted teeth #1, #16, #17, and #32. Procedure involved surgical removal of all four impacted wisdom teeth under general anesthesia with no complications.
+Generated Answer: The diagnosis documented in Erica Cisneros' transcription is completely bony impacted teeth #1, #16, #17, and #32.
+Retrieved Context: Patient Name: Eric Perez
+DOB: 1995-03-19
+Address: 05431 Steele Lodge, Port Michael, UT 69714
+Phone: +1-683-624-6713x8489
+CC:, Progressive lower extremity weakness.,HX: ,This 52y/o RHF had a h/o right ...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.691
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 30 - summarization
+Query: Summarize the transcription for patient Jenna Hess, DOB 1998-07-24, Phone 701.452.0675x0845 in 150 words.
+Reference Answer: Patient presents for preoperative visit for weight management procedures. Due to enlarged liver, patient requires two weeks of Optifast at 900 calories for preoperative weight loss to improve surgical safety. Two-stage surgical plan includes: first, laparoscopic cholecystectomy scheduled for October 6th to treat cholelithiasis, followed by laparoscopic gastric banding procedure. Comprehensive informed consent obtained with detailed discussion of risks and complications for both procedures including bleeding, infection, thromboembolism, organ injury, bile duct complications, band-related complications (slippage, erosion), and potential need for additional procedures. Patient completed preoperative requirements including consent forms, educational materials, preoperative quiz, and review of pre/postoperative instructions. Patient demonstrated understanding of procedures and associated risks. All questions were answered and patient is cleared for planned surgical interventions.
+Generated Answer: Jenna Hess, born on 1998-07-24, visited for a preoperative consultation for weight management. She was advised to use Optifast for weight loss to reduce the size of her liver, making the upcoming procedures safer. The risks and potential complications of laparoscopic cholecystectomy and laparoscopic gastric banding were explained to her in detail. She understood and agreed to proceed with the surgeries. The cholecystectomy is planned for October 6. She also signed the consent forms for the procedures and took a preoperative quiz. She was also informed about the potential complications and risks associated with the procedures. She is scheduled for surgical intervention.
+Retrieved Context: Patient Name: Jenna Hess
+DOB: 1998-07-24
+Address: 0825 Christian Estates Apt. 498, Rodgerschester, MI 94543
+Phone: 701.452.0675x0845
+HISTORY OF PRESENT ILLNESS: ,I have seen ABC today for her preopera...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.457
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 31 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Jenna Hess, DOB 1998-07-24.
+Reference Answer: Preoperative preparation: Two weeks of Optifast diet at approximately 900 calories to reduce liver size for safer surgery. Staged surgical approach: 1. Laparoscopic cholecystectomy scheduled for October 6th to treat cholelithiasis, 2. Subsequent laparoscopic gastric banding procedure for weight management. Patient education completed including detailed risk discussion, consent form completion, preoperative quiz, and review of pre/postoperative instructions. Comprehensive informed consent obtained for both procedures with full understanding of potential complications.
+Generated Answer: The treatment plan for Jenna Hess, DOB 1998-07-24, includes:
+
+1. She will be put on two weeks of Optifast at around 900 calories for weight loss prior to her procedures.
+2. She will undergo a laparoscopic cholecystectomy, a surgery planned for October 6. This surgery is for cholelithiasis prior to her Lap-Banding procedure.
+3. She will also undergo a laparoscopic gastric banding procedure. The risks and potential complications of both surgeries have been explained to her in detail and she understands them.
+4. She has reviewed and signed the Fairfield County Bariatrics consent form for banding and all the risks. She has also signed the St. Vincent's Hospital consent form for Lap-Banding.
+5. She has taken the preoperative quiz for banding, signed the preop and postop instructions, and understands them.
+6. She will proceed for surgical intervention.
+Retrieved Context: Patient Name: Jenna Hess
+DOB: 1998-07-24
+Address: 0825 Christian Estates Apt. 498, Rodgerschester, MI 94543
+Phone: 701.452.0675x0845
+HISTORY OF PRESENT ILLNESS: ,I have seen ABC today for her preopera...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.314
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 32 - diagnosis
+Query: What diagnosis is documented in Jenna Hess' transcription?
+Reference Answer: Cholelithiasis (gallstones) requiring laparoscopic cholecystectomy prior to planned laparoscopic gastric banding procedure for weight management. Patient requires preoperative weight loss due to enlarged liver.
+Generated Answer: Jenna Hess' transcription doesn't provide a specific diagnosis. However, it mentions that she is undergoing preoperative visits for weight management and is planned for laparoscopic cholecystectomy for cholelithiasis and laparoscopic gastric banding.
+Retrieved Context: Patient Name: Jenna Hess
+DOB: 1998-07-24
+Address: 0825 Christian Estates Apt. 498, Rodgerschester, MI 94543
+Phone: 701.452.0675x0845
+HISTORY OF PRESENT ILLNESS: ,I have seen ABC today for her preopera...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.421
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 33 - summarization
+Query: Summarize the transcription for patient James Shaffer, DOB 1962-02-25, Phone +1-994-538-9153 in 150 words.
+Reference Answer: A 50-year-old male with progressive tracheomalacia underwent complex airway reconstruction. Previous treatment included multiple metallic tracheal stents which caused progressive airway obstruction due to granulation tissue and inflammatory changes. Emergency procedure involved neck exploration, tracheostomy, flexible bronchoscopy, and removal of foreign body stent materials with tracheal dilation. Surgery revealed extensive subglottic and tracheal stenosis with embedded metallic fragments requiring careful removal. Upper and mid-tracheal stent material was successfully extracted, while distal stent was left undisturbed as it wasn't causing obstruction. Initial attempt to place Montgomery T-tube was unsuccessful due to inadequate length. Final placement of #8 Shiley tracheostomy tube provided secure airway above remaining distal stent. Patient tolerated procedure well without complications and was transferred to ICU in satisfactory condition. This represents definitive management of complex tracheal stenosis with foreign body complications.
+Generated Answer: James Shaffer, a 50-year-old white male, underwent surgery for severe airway obstruction due to subglottic tracheal stenosis and a foreign body in the trachea. His condition was a result of progressive tracheomalacia and complications from previously placed tracheal metallic stents. The operation involved neck exploration, tracheostomy, bronchoscopy, removal of foreign body stent material, dilation of the distal trachea, and placement of a #8 Shiley single cannula tracheostomy tube. Post-surgery, the patient's airway was secured and his condition was satisfactory. The procedure was performed without complications. The patient was previously treated in National Tennessee and was admitted to ABC Hospital for further evaluation and management. He was fully informed about the risks and complications of the procedure and agreed to proceed.
+Retrieved Context: Patient Name: James Shaffer
+DOB: 1962-02-25
+Address: 97687 Christopher Knolls, Knoxfort, KS 19838
+Phone: +1-994-538-9153
+PREOPERATIVE DIAGNOSES,Airway obstruction secondary to severe subglottic trache...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.464
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 34 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient James Shaffer, DOB 1962-02-25.
+Reference Answer: Surgical intervention: Neck exploration with collar incision, tracheostomy creation between 2nd-3rd tracheal rings, urgent flexible bronchoscopy via tracheostomy site, removal of metallic stent fragments from upper and mid-trachea, tracheal dilation, placement of #8 Shiley single cannula tracheostomy tube. Anesthetic approach: initial local anesthesia with 1% Xylocaine and epinephrine, transition to general anesthesia via #6 endotracheal tube once airway secured. Surgical closure: irrigation, strap muscle closure with 3-0 Vicryl, skin closure with 2-0 Prolene, tracheostomy secured with 2-0 silk sutures. Post-operative: transfer to ICU for continued monitoring.
+Generated Answer: The treatment plan for patient James Shaffer, DOB 1962-02-25, as per the transcription, involved a surgical procedure to address his airway obstruction due to severe subglottic tracheal stenosis and a foreign body in the trachea. The operation performed included neck exploration, tracheostomy, urgent flexible bronchoscopy via the tracheostomy site, removal of the foreign body (tracheal metallic stent material), dilation of the distal trachea, and placement of a #8 Shiley single cannula tracheostomy tube. 
+
+Post-surgery, the patient was taken back to the Intensive Care Unit in satisfactory condition. The patient tolerated the procedure well without any complications. The transcription does not provide further details on the post-operative care or long-term treatment plan for the patient.
+Retrieved Context: Patient Name: James Shaffer
+DOB: 1962-02-25
+Address: 97687 Christopher Knolls, Knoxfort, KS 19838
+Phone: +1-994-538-9153
+PREOPERATIVE DIAGNOSES,Airway obstruction secondary to severe subglottic trache...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.479
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 35 - medical_history
+Query: What are the chronic conditions mentioned in James Shaffer's transcription (Phone +1-994-538-9153)?
+Reference Answer: Progressive tracheomalacia with history of multiple metallic tracheal stent placements. Development of severe subglottic tracheal stenosis secondary to stent-related complications including extensive granulation tissue and inflammatory tissue changes. Progressive airway obstruction requiring multiple interventions over several years.
+Generated Answer: James Shaffer's transcription mentions the following chronic conditions: Airway obstruction secondary to severe subglottic tracheal stenosis with foreign body in the trachea, and progressive tracheomalacia.
+Retrieved Context: Patient Name: James Shaffer
+DOB: 1962-02-25
+Address: 97687 Christopher Knolls, Knoxfort, KS 19838
+Phone: +1-994-538-9153
+PREOPERATIVE DIAGNOSES,Airway obstruction secondary to severe subglottic trache...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.609
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 36 - diagnosis
+Query: What diagnosis is documented in James Shaffer's transcription?
+Reference Answer: Preoperative and postoperative diagnosis: Airway obstruction secondary to severe subglottic tracheal stenosis with foreign body in the trachea (metallic stent material). History of progressive tracheomalacia with stent-related complications.
+Generated Answer: The diagnosis documented in James Shaffer's transcription is Airway obstruction secondary to severe subglottic tracheal stenosis with a foreign body in the trachea.
+Retrieved Context: Patient Name: James Shaffer
+DOB: 1962-02-25
+Address: 97687 Christopher Knolls, Knoxfort, KS 19838
+Phone: +1-994-538-9153
+PREOPERATIVE DIAGNOSES,Airway obstruction secondary to severe subglottic trache...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.723
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 37 - summarization
+Query: Summarize the transcription for patient Susan Wise, DOB 1977-05-16, Phone 717-705-6958x123 in 150 words.
+Reference Answer: Patient presents for gastric band adjustment following lap band placement in January 2009. She reports stress-related eating issues following recent car accident, experiencing lack of satiety and difficulty feeling full. Patient admits to nighttime hunger and consuming candy bar for symptom relief. Physical examination shows stable vital signs with weight of 197.7 pounds (BMI 38.5) representing 3.8-pound loss since last visit. Band adjustment procedure successfully performed: port accessed, 6 mL aspirated from existing fill, 1 mL added for total of 7 mL in band. Patient tolerated water post-procedure without difficulty. Current status shows good tolerance of adjustment with plans for follow-up in two weeks for additional adjustment as needed. This represents routine post-operative management of adjustable gastric band with appropriate response to fill adjustment addressing patient's satiety concerns.
+Generated Answer: Susan Wise, born on 1977-05-16, visited for a lap band adjustment. She had a lap band placement in 01/09 and has been experiencing issues with her adjustments due to stress and a recent car accident. She reported not feeling full despite not being particularly hungry, and has been struggling with late-night hunger. Her physical examination showed a temperature of 98, pulse 76, weight 197.7 pounds, blood pressure 102/72, and BMI 38.5. She had lost 3.8 pounds since her last visit. The procedure involved accessing her port and adjusting the band, which now contains approximately 7 mL. She tolerated water post-procedure. She is scheduled to return in two weeks for another adjustment if needed.
+Retrieved Context: Patient Name: Susan Wise
+DOB: 1977-05-16
+Address: 334 Weaver Squares Suite 246, New Paulberg, DE 80617
+Phone: 717-705-6958x123
+REASON FOR VISIT:,  Lap band adjustment.,HISTORY OF PRESENT ILLNESS:,  Ms...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.327
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 38 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Susan Wise, DOB 1977-05-16.
+Reference Answer: Band adjustment procedure: Access port (AP standard low profile), aspirate existing fluid (6 mL removed), add adjustment fill (1 mL added for total 7 mL), confirm tolerance with water test post-procedure. Follow-up plan: Return visit in two weeks for additional band adjustment as needed. Ongoing monitoring of weight loss progress and satiety response to current fill level.
+Generated Answer: The treatment plan for Susan Wise, DOB 1977-05-16, as per the transcription is as follows:
+
+1. The patient underwent a lap band adjustment procedure. She had approximately 7 mL within her band after the procedure and tolerated water post-procedure.
+2. She is advised to return in two weeks for another adjustment as needed.
+Retrieved Context: Patient Name: Susan Wise
+DOB: 1977-05-16
+Address: 334 Weaver Squares Suite 246, New Paulberg, DE 80617
+Phone: 717-705-6958x123
+REASON FOR VISIT:,  Lap band adjustment.,HISTORY OF PRESENT ILLNESS:,  Ms...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.295
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 39 - medical_history
+Query: What are the chronic conditions mentioned for Susan Wise, DOB 1977-05-16?
+Reference Answer: Status post laparoscopic gastric band placement (January 2009) for obesity management. Current BMI 38.5 with ongoing weight management needs. Patient reports stress-related eating patterns and difficulty achieving satiety, requiring band adjustments.
+Generated Answer: The transcription for Susan Wise does not mention any chronic conditions.
+Retrieved Context: Patient Name: Susan Mcclain
+DOB: 1935-03-14
+Address: 3086 Bullock Way, North John, ND 93271
+Phone: 671.471.1362
+PROBLEM LIST:,1.  HIV stable.,2.  Hepatitis C chronic.,3.  History of depression, stable...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.148
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 40 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Carrie Gonzales, DOB 1949-10-04.
+Reference Answer: Bilateral vasectomy procedure under local anesthesia with conscious sedation. Prophylactic antibiotics administered preoperatively. Surgical technique: bilateral scrotal approach with identification and isolation of vas deferens, removal of 1-inch segments from each 2-inch isolated portion, cauterization of free ends, ligation with 2-0 silk sutures with end folding technique, hemostasis with cautery, return of vas ends to scrotal incisions. Wound care: Bacitracin ointment application and dry sterile dressing. Post-operative: patient awakened and transferred to recovery in satisfactory condition with no complications and minimal blood loss.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Gregory Garcia
+DOB: 1952-11-15
+Address: 667 Conrad Plains, New Caseyfurt, AR 50787
+Phone: 9925128454
+CHIEF COMPLAINT:,  The patient comes for her well-woman checkup.,HISTORY OF PRESENT I...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 0.000
+  semantic_similarity: 0.081
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 41 - diagnosis
+Query: What diagnosis is documented in Carrie Gonzales' transcription?
+Reference Answer: Preoperative and postoperative diagnosis: Fertile male with completed family. Procedure: Elective male sterilization via bilateral vasectomy for permanent contraception.
+Generated Answer: The diagnosis documented in Carrie Gonzales' transcription includes gastroenteritis, metabolic acidosis, and dehydration.
+Retrieved Context: Patient Name: Cathy Jordan
+DOB: 1953-07-28
+Address: 4024 Amy Plain, Port Shannonshire, VI 87839
+Phone: 692-437-1587x7991
+DIAGNOSIS AT ADMISSION:,  Chronic obstructive pulmonary disease (COPD) exacerba...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 0.000
+  semantic_similarity: 0.096
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 42 - summarization
+Query: Summarize the transcription for patient Erin Harris, DOB 1966-09-30, Phone 699-763-0554 in 150 words.
+Reference Answer: A 17-year-old female presented to emergency department with foreign body airway compromise caused by fishbone impaction. Patient was intubated and taken to operating room where ENT surgeon successfully removed large fishbone. Medical history significant for diabetes, hypertension, asthma, previous cholecystectomy, total hysterectomy, and cataract surgery. Current medications include Prevacid, Humulin, Diprivan, Proventil, Unasyn, and Solu-Medrol. Post-operatively, patient was observed on ventilatory support with IV antibiotics to monitor airway improvement. Subsequent evaluation showed sufficient airway patency allowing successful extubation. Patient demonstrated good oral intake, stable airway, normal voice, and expressed readiness for discharge. Final evaluation by ENT confirmed suitability for home discharge with follow-up appointment scheduled in one week. Patient recovered well from foreign body removal without requiring tracheostomy and showed complete resolution of airway compromise.
+Generated Answer: Erin Harris, a 17-year-old female with a history of diabetes, hypertension, asthma, cholecystectomy, total hysterectomy, and cataract, presented to the emergency room with a foreign body and airway compromise. She was taken to the operating room, intubated, and a fishbone was removed. Post-operation, she was observed for airway improvement, treated with IV antibiotics and ventilatory support. She was later extubated when her airway was deemed sufficient. She showed good recovery with good airway, voice, and was prepared for discharge. She was to be evaluated by Dr. X before discharge and scheduled to return for a follow-up in a week. Her current medications include Prevacid, Humulin, Diprivan, Proventil, Unasyn, and Solu-Medrol. She has no known drug allergies and her social history is negative for illicit drugs, alcohol, and tobacco.
+Retrieved Context: Patient Name: Erin Harris
+DOB: 1966-09-30
+Address: 8480 Kelly Ways, Joshuatown, WA 39346
+Phone: 699-763-0554
+HISTORY OF PRESENT ILLNESS:,  The patient is a 17-year-old female, who presents to the emer...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.401
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 43 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Erin Harris, DOB 1966-09-30.
+Reference Answer: Emergency management: Intubation and surgical removal of fishbone foreign body by ENT surgeon. Post-operative care: IV antibiotics, ventilatory support, airway monitoring to assess extubation candidacy versus tracheostomy need. Successful extubation performed after airway assessment showed adequate patency. Discharge planning: ENT evaluation prior to discharge, home discharge approved with good oral intake, stable airway, and normal voice. Follow-up: ENT appointment scheduled in one week for continued monitoring.
+Generated Answer: The patient Erin Harris was taken to the operating room due to a foreign body and airway compromise. A large fishbone was removed from her airway and she was intubated. She was observed to see if her airway would improve, and if not, she would require a tracheostomy. She was treated with IV antibiotics and ventilatory support. At the time of the dictation, she had recently been taken to the operating room where it was felt that the airway was sufficient and she was extubated. She was doing well with good p.o.s, good airway, good voice, and desiring to be discharged home. So, she was being prepared for discharge at this point. Dr. X was to evaluate her before she leaves to make sure there were no problems with her going home. Dr. Y felt she could be discharged that day and planned to have her return to see him in a week.
+Retrieved Context: Patient Name: Erin Harris
+DOB: 1966-09-30
+Address: 8480 Kelly Ways, Joshuatown, WA 39346
+Phone: 699-763-0554
+HISTORY OF PRESENT ILLNESS:,  The patient is a 17-year-old female, who presents to the emer...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.384
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 44 - medical_history
+Query: What are the chronic conditions mentioned in Erin Harris' transcription (Phone 699-763-0554)?
+Reference Answer: Past medical history includes diabetes, hypertension, asthma. Previous surgical history significant for cholecystectomy, total hysterectomy, and cataract surgery. Current acute condition: foreign body (fishbone) airway compromise requiring emergency intervention.
+Generated Answer: Erin Harris has a history of diabetes, hypertension, asthma, and cataract. She also had a cholecystectomy and a total hysterectomy.
+Retrieved Context: Patient Name: Erin Harris
+DOB: 1966-09-30
+Address: 8480 Kelly Ways, Joshuatown, WA 39346
+Phone: 699-763-0554
+HISTORY OF PRESENT ILLNESS:,  The patient is a 17-year-old female, who presents to the emer...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.408
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 45 - medications_allergies
+Query: List the medications documented for patient Erin Harris (DOB 1966-09-30).
+Reference Answer: Current medications: Prevacid, Humulin, Diprivan, Proventil, Unasyn, and Solu-Medrol. No known drug allergies documented. Social history negative for illicit drugs, alcohol, and tobacco use.
+Generated Answer: The medications documented for patient Erin Harris (DOB 1966-09-30) are Prevacid, Humulin, Diprivan, Proventil, Unasyn, and Solu-Medrol.
+Retrieved Context: Patient Name: Erin Harris
+DOB: 1966-09-30
+Address: 8480 Kelly Ways, Joshuatown, WA 39346
+Phone: 699-763-0554
+HISTORY OF PRESENT ILLNESS:,  The patient is a 17-year-old female, who presents to the emer...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.433
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 46 - diagnosis
+Query: What diagnosis or clinical impression is documented in Terry Carpenter's transcription (DOB 1951-08-15)?
+Reference Answer: Indication: Prostate cancer. Bone scan findings show focus of abnormal increased tracer activity overlying the right parietal region of skull requiring further evaluation with CT or MRI if clinically indicated. Probable urinary retention also noted based on increased bladder activity on imaging.
+Generated Answer: The transcription for Terry Carpenter (DOB 1951-08-15) indicates a focus of abnormal increased tracer activity overlying the right parietal region of the skull and some degree of urinary retention. However, a specific diagnosis is not provided in the transcription.
+Retrieved Context: Patient Name: Terry Torres
+DOB: 1967-12-18
+Address: USS Sawyer, FPO AP 75958
+Phone: 448.589.9829x955
+CC: ,Headache.,HX:, This 51 y/o RHM was moving furniture several days prior to presentation when he...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.375
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 47 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Terry Carpenter, DOB 1951-08-15.
+Reference Answer: Diagnostic imaging: Bone scan performed 3.5 hours following IV administration of 26.5 mCi Technetium 99m MDP with anterior and posterior skeletal projections. Recommendations: CT scanning or magnetic resonance imaging of skull and brain for further assessment of abnormal skull uptake if clinically indicated. Address probable urinary retention issue identified on scan.
+Generated Answer: The transcription for patient Terry Carpenter, DOB 1951-08-15, does not provide a detailed treatment plan.
+Retrieved Context: Patient Name: Terry Carpenter
+DOB: 1951-08-15
+Address: Unit 0219 Box 0285, DPO AA 50967
+Phone: 331.358.6843x698
+INDICATION:,  Prostate Cancer.,TECHNIQUE:,  3.5 hours following the intravenous administ...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.314
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 48 - summarization
+Query: Summarize the transcription for patient Dr. Robert Brooks, DOB 1955-09-26, Phone 587-483-9933 in 150 words.
+Reference Answer: A 30-year-old male underwent successful laparoscopic Roux-en-Y gastric bypass for morbid obesity and associated comorbidities including hypertension and obstructive sleep apnea requiring CPAP. Patient completed standard bariatric evaluation, consultations, diagnostics, and preoperative Medifast weight loss program. Surgery performed via same-day surgery process with uncomplicated postoperative course. Post-operative management included DVT prophylaxis with subcutaneous heparin, early mobilization, sequential compression devices, and PCA pain control. Patient utilized CPAP without cardiopulmonary complications. Progressive diet advancement from bariatric clear liquids at 2 ounces per hour on postoperative day 1 to 4 ounces per hour by day 2, both tolerated well. Drains removed on discharge. Patient discharged on postoperative day 2 in stable, improved condition with prescriptions for omeprazole and Lortab, scheduled for office follow-up within one week.
+Generated Answer: Dr. Robert Brooks, a 30-year-old male, underwent a laparoscopic Roux-en-Y gastric bypass surgery for his morbid obesity and associated comorbidities. He was also diagnosed with hypertension and obstructive sleep apnea, for which he uses a CPAP machine. His postoperative recovery was smooth, with no new cardiopulmonary complaints. He was able to start on clear liquids and was ambulatory. His drains were removed on the second postoperative day and he was discharged in stable condition. His discharge instructions included maintaining a clear liquid diet, avoiding heavy lifting, and taking prescribed medications. He was also advised to schedule a follow-up appointment within a week and to call if he experienced any concerning symptoms.
+Retrieved Context: Patient Name: Dr. Robert Brooks
+DOB: 1955-09-26
+Address: 4136 Shaw Parks Suite 515, Brianberg, CT 60270
+Phone: 587-483-9933
+FINAL DIAGNOSES,1.  Morbid obesity, status post laparoscopic Roux-en-Y gastr...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.354
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 49 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Dr. Robert Brooks, DOB 1955-09-26.
+Reference Answer: Surgical intervention: Laparoscopic Roux-en-Y gastric bypass performed successfully. Post-operative care: DVT prophylaxis with subcutaneous heparin, SCDs, early mobilization; PCA for pain control; continued CPAP use; progressive diet advancement from 2 oz/hour clear liquids (day 1) to 4 oz/hour (day 2). Discharge plan: prescriptions for omeprazole and Lortab, bariatric clear liquids at home (goal 64 oz/day), activity maintenance with no heavy lifting, shower after 24 hours, wound care instructions. Follow-up: office appointment within one week.
+Generated Answer: The treatment plan for Dr. Robert Brooks, DOB 1955-09-26, as per the transcription is as follows:
+
+1. He underwent a laparoscopic Roux-en-Y gastric bypass surgery for his morbid obesity. Post-surgery, he was given DVT prophylaxis with subcu heparin, early and frequent mobilization, and SCDs. PCA was utilized for pain control.
+
+2. Postoperative day #1, he was able to start bariatric clear liquids at 2 ounces per hour, which he tolerated well. By the second postoperative day, he was able to advance to four ounces per hour.
+
+3. Upon discharge, he was instructed to re-appoint in the office in the next week and call in the interim if any significant concerning complaints arise. 
+
+4. He was given prescriptions for omeprazole and Lortab. 
+
+5. He was advised to maintain bariatric clear liquids at home, with a goal of 64 ounces per day, maintain activity at home, but avoid heavy lifting or straining. 
+
+6. He was allowed to shower starting the day after discharge, and drain site care and wound care were reviewed. 
+
+7. He was advised to re-appoint in the office in the next week, and to call in the interim if any significant concerning complaints arise.
+Retrieved Context: Patient Name: Dr. Robert Brooks
+DOB: 1955-09-26
+Address: 4136 Shaw Parks Suite 515, Brianberg, CT 60270
+Phone: 587-483-9933
+FINAL DIAGNOSES,1.  Morbid obesity, status post laparoscopic Roux-en-Y gastr...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.234
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 50 - medical_history
+Query: What are the chronic conditions mentioned in Dr. Robert Brooks' transcription (Phone 587-483-9933)?
+Reference Answer: Morbid obesity (primary indication for surgery), hypertension, obstructive sleep apnea requiring CPAP therapy. Patient underwent bariatric surgery to address longstanding morbid obesity and associated comorbidities.
+Generated Answer: The chronic conditions mentioned in Dr. Robert Brooks' transcription are Morbid obesity, Hypertension, and Obstructive sleep apnea.
+Retrieved Context: Patient Name: Dr. Robert Brooks
+DOB: 1955-09-26
+Address: 4136 Shaw Parks Suite 515, Brianberg, CT 60270
+Phone: 587-483-9933
+FINAL DIAGNOSES,1.  Morbid obesity, status post laparoscopic Roux-en-Y gastr...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.565
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 51 - medications_allergies
+Query: List the medications documented for patient Dr. Robert Brooks (DOB 1955-09-26).
+Reference Answer: Post-operative medications prescribed: omeprazole and Lortab (Hydrocodone/Acetaminophen). Pre-operative: patient was on no medications prior to surgery. Hospital medications included PCA pain control and subcutaneous heparin for DVT prophylaxis.
+Generated Answer: The medications documented for patient Dr. Robert Brooks (DOB 1955-09-26) are omeprazole and Lortab.
+Retrieved Context: Patient Name: Dr. Robert Brooks
+DOB: 1955-09-26
+Address: 4136 Shaw Parks Suite 515, Brianberg, CT 60270
+Phone: 587-483-9933
+FINAL DIAGNOSES,1.  Morbid obesity, status post laparoscopic Roux-en-Y gastr...
+Scores:
+  answer_accuracy: 0.500
+  factuality: 1.000
+  semantic_similarity: 0.535
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 52 - diagnosis
+Query: What diagnosis is documented in Dr. Robert Brooks' transcription?
+Reference Answer: Final diagnoses: 1. Morbid obesity, status post laparoscopic Roux-en-Y gastric bypass, 2. Hypertension, 3. Obstructive sleep apnea, on CPAP. Operation performed: Laparoscopic Roux-en-Y gastric bypass.
+Generated Answer: Dr. Robert Brooks' transcription documents the following diagnoses:
+1. Morbid obesity, status post laparoscopic Roux-en-Y gastric bypass.
+2. Hypertension.
+3. Obstructive sleep apnea, on CPAP.
+Retrieved Context: Patient Name: Dr. Robert Brooks
+DOB: 1955-09-26
+Address: 4136 Shaw Parks Suite 515, Brianberg, CT 60270
+Phone: 587-483-9933
+FINAL DIAGNOSES,1.  Morbid obesity, status post laparoscopic Roux-en-Y gastr...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.298
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 53 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Anne Ramirez, DOB 1968-10-29.
+Reference Answer: Bilateral vasectomy procedure: Patient positioned supine, prepped and draped. Local anesthesia administered to skin and vas. Bilateral vas deferens grasped with Allis clamps, skin incised, vas sheath opened with scalpel, elevated with iris scissors. Vas deferens ligated with clamps, segments excised, ends secured with hemoclips (2 testicular side, 1 proximal side per vas). Hemostasis confirmed, incisions closed with 3-0 chromic catgut in interrupted fashion. Dry sterile dressings applied, scrotal supporter placed.
+Generated Answer: The patient Anne Ramirez underwent a procedure where the vas deferens was clamped and a portion was excised. This was done on both the left and right side. After the procedure, dry sterile dressings were applied and the patient was put on a scrotal supporter. The procedure was then terminated. There is no further treatment plan mentioned in the transcription.
+Retrieved Context: Patient Name: Anne Ramirez
+DOB: 1968-10-29
+Address: 325 Ronald Falls Suite 161, Lake Karen, FM 86794
+Phone: 001-593-371-3039x29899
+DESCRIPTION:,  The patient was placed in the supine position and was ...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.365
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 54 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Jennifer Bell, who lives in 6864 Jacob Summit Apt. 700, New Amyton, AZ 69133, DOB 1970-01-13.
+Reference Answer: Bilateral vasectomy under local anesthesia: Patient prepped, draped, positioned supine. Scrotal skin anesthetized with 0.25% Marcaine without epinephrine. Bilateral small hemiscrotum incisions made. Vas deferens isolated, skeletonized, clipped proximally and distally twice each side, cut edges fulgurated, meticulous hemostasis maintained. Scrotal skin closed with 4-0 chromic sutures bilaterally. Jockstrap and sterile dressing applied. All counts correct.
+Generated Answer: Sorry, I can't provide this information because there is no patient named Jennifer Bell with DOB 1970-01-13 in the provided context.
+Retrieved Context: Patient Name: Jennifer Harris
+DOB: 1971-05-11
+Address: 2558 Payne Lodge Suite 209, South James, DE 18988
+Phone: (588)306-0391x830
+REASON FOR VISIT:,  Syncope.,HISTORY:,  The patient is a 75-year-old l...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.103
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 55 - diagnosis
+Query: What diagnosis is documented in Jennifer Bell's transcription?
+Reference Answer: Preoperative and postoperative diagnosis: Voluntary sterility. Operative procedure: Bilateral vasectomy under local anesthesia for elective male sterilization.
+Generated Answer: Sorry, I can't provide this information because there is no transcription available for a patient named Jennifer Bell.
+Retrieved Context: Patient Name: Jennifer Carney
+DOB: 1983-11-11
+Address: 1278 Julia Hollow Suite 877, Wolfeview, AS 83501
+Phone: 001-556-986-6187x62686
+CC:, Left sided weakness.,HX:, 74 y/o RHF awoke from a nap at 11:0...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.141
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 56 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Dorothy Holland, DOB 1971-05-13.
+Reference Answer: Vasectomy under general anesthesia: Midline scrotal incision performed. Right vas identified, separated from surrounding tissues, clamped, transected, tied off with 4-0 chromic. Left vas accessed through same incision, transected, tied off, returned to wound. No bleeding noted bilaterally. Wound closed with 4-0 Vicryl sutures. Sterile dressing applied. Patient awakened, transferred to recovery in stable condition.
+Generated Answer: The treatment plan for patient Dorothy Holland, DOB 1971-05-13, involved a vasectomy procedure. The procedure was carried out through a midline scrotal incision. The right vas was identified, separated from the surrounding tissues, clamped, transected, and tied off with a 4-0 chromic. No bleeding was identified. Through the same incision, the left side was identified, transected, tied off, and dropped back into the wound. Again no bleeding was noted. The wound was closed with 4-0 Vicryl times two. The patient tolerated the procedure well. A sterile dressing was applied. The patient was then awakened and transferred to the recovery room in stable condition.
+Retrieved Context: Patient Name: Dorothy Holland
+DOB: 1971-05-13
+Address: 122 James Groves Apt. 263, Dixonport, WV 76453
+Phone: +1-574-555-4896x3377
+DIAGNOSIS:,  Desires vasectomy.,NAME OF OPERATION: , Vasectomy.,ANESTH...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.420
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 57 - summarization
+Query: Summarize the transcription for patient Robert Ramirez, DOB 1995-07-01, Phone 001-843-543-2859x65969 in 150 words.
+Reference Answer: A 67-year-old Hispanic male was admitted for enlarged prostate with bladder neck obstruction symptoms causing difficulty voiding. Physical examination revealed normal heart, lungs, and abdomen. Laboratory studies showed BUN 19, creatinine 1.1, hemoglobin 13, hematocrit 32.1, with normal coagulation studies. Chest x-ray demonstrated calcified old granulomatous disease but was otherwise normal, and EKG was normal. Patient underwent cystourethroscopy and transurethral resection of prostate with uncomplicated postoperative course. Pathology results pending at discharge. Patient achieved good urinary stream with minimal hematuria and was discharged in satisfactory condition. Discharge medications included Bactrim DS once daily for ten days with standard post-prostatic surgery instructions. Follow-up scheduled in office within one week and with consulting physician as outpatient. Final diagnosis: enlarged prostate with benign bladder neck obstruction.
+Generated Answer: Robert Ramirez, a 67-year-old Hispanic male, was admitted due to an enlarged prostate and symptoms of bladder neck obstruction. He underwent a cystourethroscopy and transurethral resection of the prostate without any complications. His physical examination was normal, with lab data showing BUN 19, creatinine 1.1, blood group A, Rh positive, Hemoglobin 13, Hematocrit 32.1, Prothrombin time 12.6 seconds, PTT 37.1. His chest x-ray and EKG were also normal. Postoperative course was uncomplicated and he was discharged in satisfactory condition with a good urinary stream, minimal hematuria, and on Bactrim DS one a day for ten days. His discharge diagnosis was an enlarged prostate with benign bladder neck obstruction. He is scheduled for follow-up in one week and by Dr. ABC next available as an outpatient. The pathology report is pending at the time of dictation.
+Retrieved Context: Patient Name: Robert Ramirez
+DOB: 1995-07-01
+Address: 02724 Kennedy Bypass, Lake Lauraville, MH 43721
+Phone: 001-843-543-2859x65969
+PROCEDURES:, Cystourethroscopy and transurethral resection of prosta...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.445
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 58 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Robert Ramirez, DOB 1995-07-01.
+Reference Answer: Surgical intervention: Cystourethroscopy and transurethral resection of prostate performed without complications. Post-operative monitoring showed good urinary stream with minimal hematuria. Discharge medications: Bactrim DS once daily for ten days. Patient education: standard post-prostatic surgery instruction sheet provided. Follow-up care: office appointment in one week, consulting physician follow-up as outpatient. Pathology results pending at time of discharge.
+Generated Answer: The patient Robert Ramirez was admitted due to enlarged prostate and symptoms of bladder neck obstruction. He underwent a cystourethroscopy and transurethral resection of the prostate. Postoperative course was uncomplicated and the pathology report is pending at the time of dictation. He is being discharged in satisfactory condition with a good urinary stream, minimal hematuria, and on Bactrim DS one a day for ten days with a standard postprostatic surgery instruction sheet. He is to be followed in the doctor's office in one week and by Dr. ABC next available as an outpatient.
+Retrieved Context: Patient Name: Robert Rodriguez
+DOB: 1969-10-03
+Address: 41446 Barnes Forest, Duncanborough, MP 74849
+Phone: 9277138236
+SUBJECTIVE: , The patient is a 55-year-old African-American male that was last se...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.430
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 59 - medical_history
+Query: What are the chronic conditions mentioned in Robert Ramirez's transcription (Phone 001-843-543-2859x65969)?
+Reference Answer: Enlarged prostate with benign bladder neck obstruction causing difficulty voiding symptoms. History of calcified old granulomatous disease noted on chest x-ray. No other chronic conditions specifically mentioned in the medical history.
+Generated Answer: Robert Ramirez's transcription mentions that he has an enlarged prostate and symptoms of bladder neck obstruction.
+Retrieved Context: Patient Name: Robert Ramirez
+DOB: 1995-07-01
+Address: 02724 Kennedy Bypass, Lake Lauraville, MH 43721
+Phone: 001-843-543-2859x65969
+PROCEDURES:, Cystourethroscopy and transurethral resection of prosta...
+Scores:
+  answer_accuracy: 0.600
+  factuality: 1.000
+  semantic_similarity: 0.505
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 60 - medications_allergies
+Query: List the medications documented for patient Robert Ramirez (DOB 1995-07-01).
+Reference Answer: Discharge medication: Bactrim DS (sulfamethoxazole/trimethoprim) once daily for ten days post-operatively. No other medications specifically mentioned in the transcription. No medication allergies documented.
+Generated Answer: The medication documented for patient Robert Ramirez (DOB 1995-07-01) is Bactrim DS.
+Retrieved Context: Patient Name: Robert Rodriguez
+DOB: 1969-10-03
+Address: 41446 Barnes Forest, Duncanborough, MP 74849
+Phone: 9277138236
+SUBJECTIVE: , The patient is a 55-year-old African-American male that was last se...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.505
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 61 - diagnosis
+Query: What diagnosis is documented in Robert Ramirez's transcription?
+Reference Answer: Admitting diagnosis: Difficulty voiding. Discharge diagnosis: Enlarged prostate with benign bladder neck obstruction. Procedures performed: Cystourethroscopy and transurethral resection of prostate without complications.
+Generated Answer: The diagnosis documented in Robert Ramirez's transcription is Enlarged prostate with benign bladder neck obstruction.
+Retrieved Context: Patient Name: Robert Ramirez
+DOB: 1995-07-01
+Address: 02724 Kennedy Bypass, Lake Lauraville, MH 43721
+Phone: 001-843-543-2859x65969
+PROCEDURES:, Cystourethroscopy and transurethral resection of prosta...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.552
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 62 - summarization
+Query: Summarize the transcription for patient Tara Henry, DOB 1965-11-09, Phone +1-405-484-9156x26732 in 150 words.
+Reference Answer: Patient consultation regarding sperm harvesting and cryopreservation following previous failed fertility treatments. Medical history includes vasectomy 10 years prior and failed vasectomy reversal performed at University of Michigan nearly two years ago, with continued azoospermia post-operatively. Previous operative notes indicated presence of some sperm and sperm heads on right side during reversal attempt. Patient initially requested sperm harvesting and cryopreservation prior to wife's next ovulation induction attempt. Wife has had several unsuccessful ovulation induction attempts due to anatomic abnormalities. Patient subsequently changed preferences, requesting fresh specimen harvest only if wife's ovulation is confirmed rather than cryopreservation. Initial harvesting date was scheduled but may require modification based on timing requirements for fresh versus preserved specimens. Coordination with wife's treating physician needed to determine optimal timing and approach for sperm collection relative to ovulation induction protocol.
+Generated Answer: Tara Henry, born on 1965-11-09, had a vasectomy 10 years ago and a failed vasectomy reversal two years ago at the University of Michigan. Despite the operation, he remained azoospermic. He expressed interest in sperm harvesting and cryopreservation before his wife's next ovulation induction attempt. However, he later indicated he might only proceed if his wife's ovulation is confirmed. He initially requested a specific date for the harvesting, but this may change if a fresh specimen is required. The doctor is awaiting further information to arrange the procedure appropriately.
+Retrieved Context: Patient Name: Tara Henry
+DOB: 1965-11-09
+Address: PSC 5825, Box 0842, APO AA 19687
+Phone: +1-405-484-9156x26732
+Sample Address,RE:  Sample Patient,Wife's name:  Sample Name,Dear Sample Doctor:,Mr. Sam...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 0.000
+  semantic_similarity: 0.364
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 63 - medical_history
+Query: What are the chronic conditions mentioned in Tara Henry's transcription (Phone +1-405-484-9156x26732)?
+Reference Answer: Patient has history of vasectomy performed 10 years ago and failed vasectomy reversal done almost two years ago at University of Michigan, with continued azoospermia post-operatively. Wife has anatomic abnormalities causing unsuccessful ovulation induction attempts.
+Generated Answer: The transcription for Tara Henry does not mention any chronic conditions.
+Retrieved Context: Patient Name: Tara Henry
+DOB: 1965-11-09
+Address: PSC 5825, Box 0842, APO AA 19687
+Phone: +1-405-484-9156x26732
+Sample Address,RE:  Sample Patient,Wife's name:  Sample Name,Dear Sample Doctor:,Mr. Sam...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.213
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 64 - medications_allergies
+Query: List the medications documented for patient Melissa Garner (Phone 455-883-1008x21101).
+Reference Answer: Anesthesia: 1% lidocaine for local anesthesia, oral sedation (specific agent not specified). Post-operative medication: Tylenol with Codeine for pain management. Patient advised to use alternative birth control until confirmed azoospermia with two consecutive semen analyses.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Melissa Garner
+DOB: 1958-08-27
+Address: 3742 Andrea Coves, Jacksonfurt, KS 42617
+Phone: 402-606-0575
+SUBJECTIVE:  ,This patient presents to the office today for a checkup.  He has severa...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.094
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 65 - summarization
+Query: Summarize the transcription for patient Raymond Powell, DOB 2001-03-03, Phone 3798478463 in 150 words.
+Reference Answer: Patient presents for follow-up after vaginal reconstruction surgery with concerning symptoms. Reports continued urinary incontinence, particularly with position changes from sitting to standing, plus urge incontinence. Voiding pattern shows hourly daytime frequency, especially morning hours after Lasix administration, with no nocturia or straining. Patient expresses significant concern about possible vaginal prolapse, noting difficulty with vaginal cream application due to feeling protrusion. Additional concern regarding abdominal distention and lower extremity edema, requiring evaluation to rule out ascites. Current management includes continued Flomax therapy with planned weaning of Urecholine to twice daily dosing. Follow-up plan includes pelvic examination by consulting physician and CT abdomen/pelvis to evaluate abdominal distention. Patient shows improving urine retention post-operatively but requires ongoing monitoring for potential prolapse and other complications. All patient questions were addressed during visit.
+Generated Answer: Raymond Powell, born on 2001-03-03, presented for a follow-up visit. She has been experiencing urinary incontinence, particularly when changing from sitting to standing, and urge incontinence. She also reported difficulty using her vaginal cream due to a perceived protrusion in the vagina, raising concerns about possible vaginal prolapse. She has been taking Lasix and voiding frequently in the morning, with no nocturia or straining to urinate. She has no bowel issues. The plan is to continue with Flomax and reduce Urecholine to twice daily. She will have a pelvic exam next week and a CT scan of the abdomen and pelvis to investigate the cause of abdominal distention.
+Retrieved Context: Patient Name: Raymond Powell
+DOB: 2001-03-03
+Address: USNS Villanueva, FPO AP 86259
+Phone: 3798478463
+HISTORY OF PRESENT ILLNESS: , The patient presents today for followup.  No dysuria, gross hematuri...
+Scores:
+  answer_accuracy: 0.700
+  factuality: 1.000
+  semantic_similarity: 0.364
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 66 - medical_history
+Query: What are the chronic conditions mentioned in Raymond Powell's transcription (Phone 3798478463)?
+Reference Answer: Status post vaginal reconstruction surgery with ongoing urinary incontinence (stress and urge types), concerns for possible vaginal prolapse, abdominal distention with rule out ascites, lower extremity edema. Patient has improving retention of urine post-operatively but continues to have functional issues.
+Generated Answer: Raymond Powell's transcription mentions urinary incontinence and possible vaginal prolapse as chronic conditions.
+Retrieved Context: Patient Name: Raymond Powell
+DOB: 2001-03-03
+Address: USNS Villanueva, FPO AP 86259
+Phone: 3798478463
+HISTORY OF PRESENT ILLNESS: , The patient presents today for followup.  No dysuria, gross hematuri...
+Scores:
+  answer_accuracy: 0.600
+  factuality: 1.000
+  semantic_similarity: 0.541
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 67 - medications_allergies
+Query: List the medications documented for patient Raymond Powell (DOB 2001-03-03).
+Reference Answer: Current medications: Flomax (continued), Urecholine (being weaned to twice daily), Lasix (causing morning urinary frequency). Vaginal cream mentioned for local application. No specific allergies documented in this transcription.
+Generated Answer: The medications documented for patient Raymond Powell (DOB 2001-03-03) are Flomax and Urecholine.
+Retrieved Context: Patient Name: Raymond Powell
+DOB: 2001-03-03
+Address: USNS Villanueva, FPO AP 86259
+Phone: 3798478463
+HISTORY OF PRESENT ILLNESS: , The patient presents today for followup.  No dysuria, gross hematuri...
+Scores:
+  answer_accuracy: 0.600
+  factuality: 1.000
+  semantic_similarity: 0.422
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 68 - summarization
+Query: Summarize the transcription for patient Jessica Dixon, DOB 1977-02-12, Phone 959.799.5001x66234 in 150 words.
+Reference Answer: A 66-year-old male, status post deceased donor kidney transplant in December 2007, presents with recurrent urinary retention issues. Recently hospitalized in February 2008 for acute renal insufficiency, likely secondary to dehydration. Previous cystoscopy revealed obstructive benign prostatic hyperplasia, and patient was started on Flomax. Current hospitalization involved urinary retention requiring Foley catheter placement. Medical history significant for end-stage renal disease, hypertension, nephrolithiasis, gout, BPH, and degenerative joint disease. Extensive medication regimen includes immunosuppressants (Rapamune, CellCept, Prednisone), cardiovascular medications, and urological treatments. Physical examination showed well-healed transplant scar and approximately 40-gram prostate without nodules. Fill and pull study demonstrated bladder tolerance of 120 mL with successful spontaneous voiding of 110 mL. Patient taught self-catheterization for future retention episodes and prescribed six-month supply of Flomax and Proscar with follow-up planned.
+Generated Answer: I'm sorry, but I can't provide the information you're asking for because there is no transcription available for a patient named Jessica Dixon with the DOB 1977-02-12 and phone number 959.799.5001x66234 in the provided context.
+Retrieved Context: Patient Name: Jessica Jimenez
+DOB: 1943-06-08
+Address: 738 Maria Underpass, Vegatown, TN 06397
+Phone: 855.914.0626x50450
+CHIEF COMPLAINT:,  Falls at home.,HISTORY OF PRESENT ILLNESS:,  The patient is ...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.266
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 69 - medical_history
+Query: What are the chronic conditions mentioned in Jessica Dixon's transcription (Phone 959.799.5001x66234)?
+Reference Answer: End-stage renal disease (now status post deceased donor kidney transplant 12/07), hypertension, history of nephrolithiasis, gout, benign prostatic hyperplasia (BPH), degenerative joint disease (DJD). Family history includes mother with unknown cancer type (possibly colon or lung) and paternal prostate problems.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Christopher Dickson
+DOB: 1952-01-19
+Address: 80631 Thomas Unions, Gonzaleztown, OH 95827
+Phone: (726)593-0240x898
+HISTORY:,  A 69-year-old female with past history of type II diabetes, a...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.168
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 70 - medications_allergies
+Query: List the medications documented for patient Jessica Dixon (DOB 1977-02-12).
+Reference Answer: Home medications: Norvasc, Toprol 50 mg, Clonidine 0.2 mg, Hydralazine, Flomax, Allopurinol, Sodium bicarbonate, Oxybutynin, Coumadin, Aspirin, Insulin 70/30, Omeprazole, Rapamune, CellCept, Prednisone, Ganciclovir, Nystatin swish and swallow, Dapsone, Finasteride. New prescriptions: 6-month supply of Flomax and Proscar. Allergies: No known drug allergies.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Jessica Jimenez
+DOB: 1943-06-08
+Address: 738 Maria Underpass, Vegatown, TN 06397
+Phone: 855.914.0626x50450
+CHIEF COMPLAINT:,  Falls at home.,HISTORY OF PRESENT ILLNESS:,  The patient is ...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 0.000
+  semantic_similarity: 0.095
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 71 - diagnosis
+Query: What diagnosis is documented in Jessica Dixon's transcription?
+Reference Answer: Primary assessment: 66-year-old male with signs and symptoms of benign prostatic hypertrophy with recurrent urinary retention since kidney transplant in December 2007. Patient successfully passed fill and pull study and was taught self-catheterization for future retention episodes.
+Generated Answer: The diagnoses documented in Jessica Dixon's transcription are:
+
+1. Falls
+2. Anxiety and depression
+3. Hypertension
+4. Hypercholesterolemia
+5. Coronary artery disease
+6. Osteoarthritis
+7. Chronic obstructive pulmonary disease
+8. Hypothyroidism
+Retrieved Context: Patient Name: Jessica Jimenez
+DOB: 1943-06-08
+Address: 738 Maria Underpass, Vegatown, TN 06397
+Phone: 855.914.0626x50450
+CHIEF COMPLAINT:,  Falls at home.,HISTORY OF PRESENT ILLNESS:,  The patient is ...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.176
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 72 - medications_allergies
+Query: List the medications documented for patient Matthew Marquez (DOB 1964-09-30).
+Reference Answer: Anesthesia: General LMA anesthesia administered intraoperatively. Prophylactic antibiotic given in preoperative holding area (specific agent not specified). Post-operative: 24-French Foley catheter placed with pinkish irrigation fluid. Electrocautery used for hemostasis during resection. No specific medications or allergies documented in this transcription.
+Generated Answer: I don't know the answer.
+Retrieved Context: Patient Name: Matthew Leonard
+DOB: 1957-05-08
+Address: 9629 John Crossroad Suite 252, Josephfort, IA 82032
+Phone: 879.578.0316x48865
+CHIEF COMPLAINT:, Palpitations.,CHEST PAIN / UNSPECIFIED ANGINA PEC...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.052
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 73 - medical_history
+Query: What are the chronic conditions mentioned in Matthew Marquez's transcription (Phone 550.414.0230)?
+Reference Answer: 77-year-old male with severe benign prostatic hyperplasia causing urinary retention and bladder stones. Cystoscopy revealed severely trabeculated bladder with multiple bladder diverticula, including large diverticulum in right posterior bladder wall proximal to trigone. Prostatic urethra moderately hypertrophied with lateral lobes and large median lobe.
+Generated Answer: Sorry, I can't provide this information because there is no transcription available for a patient named Matthew Marquez with the phone number 550.414.0230 in the provided context.
+Retrieved Context: Patient Name: Wesley Mercado
+DOB: 1955-03-12
+Address: 751 Stephen Groves Apt. 485, Port Christina, GU 02152
+Phone: 580-540-6885
+HISTORY OF PRESENT ILLNESS: , The patient is a 41-year-old white male wi...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.239
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 74 - medications_allergies
+Query: List the medications documented for patient Alexander Hawkins (Phone +1-325-755-8471x4539).
+Reference Answer: Anesthesia: General endotracheal anesthesia. Intravenous fluids: Crystalloid. Post-operative: 22-French three-way catheter placed. Electrocautery used for coagulation around tumor periphery and base. No specific medications or allergies documented in this transcription.
+Generated Answer: The document does not provide information on any medications for patient Alexander Hawkins.
+Retrieved Context: Patient Name: Alexander Mullins
+DOB: 1945-11-02
+Address: 330 Montgomery Ridge Suite 308, Williamsfurt, MS 98458
+Phone: 001-651-555-9911x628
+ADMITTING DIAGNOSIS:,  Posttraumatic AV in right femoral hea...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.244
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 75 - medical_history
+Query: What are the chronic conditions mentioned in Alexander Hawkins's transcription (DOB 2006-09-14)?
+Reference Answer: 82-year-old male with history of bladder cancer presenting with renal insufficiency and syncopal episodes. Current presentation shows large bladder tumor lateral to right ureteral opening with significant papillary superficial involvement around left area, periureteral diverticulum lateral to left ureteral opening, and moderate bladder trabeculations throughout.
+Generated Answer: The transcription for Alexander Hawkins (DOB 2006-09-14) does not mention any chronic conditions.
+Retrieved Context: Patient Name: Anthony Walker
+DOB: 1947-10-25
+Address: 754 Steven Well Suite 520, Michellefurt, AK 36569
+Phone: +1-574-789-9404x00796
+DIAGNOSIS AT ADMISSION:,  Chronic obstructive pulmonary disease (CO...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.251
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 76 - medications_allergies
+Query: List the medications documented for patient Meghan Graham (DOB 1966-03-09).
+Reference Answer: Current medications: Patient is on no medications. No known allergies documented. 4-year-old boy with up-to-date immunizations. No previous surgeries or hospitalizations except for circumcision.
+Generated Answer: Sorry, I can't provide this information because there is no patient named Meghan Graham with DOB 1966-03-09 in the provided context.
+Retrieved Context: Patient Name: Meghan Barron
+DOB: 1980-05-06
+Address: 2344 Alex Shores, West Dylan, WV 92370
+Phone: 001-887-964-0086
+CHIEF COMPLAINT:,
+
+Patient Name: Megan Keller
+DOB: 1970-08-09
+Address: Unit 7967 Box...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.179
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 77 - medical_history
+Query: What are the chronic conditions mentioned in Meghan Graham's transcription (Phone 503.812.5437)?
+Reference Answer: 4-year-old boy with acute onset left testicular pain with history of similar episodes in past (not as severe). Ultrasound showed poor blood flow on left initially with increased flow to epididymis, but second study showed normal flow. Mild echotexture changes on left testicle initially that resolved. Assessment of possible torsion-detorsion versus other acute testicular problem.
+Generated Answer: I don't know the answer.
+Retrieved Context: Patient Name: Meghan Barron
+DOB: 1980-05-06
+Address: 2344 Alex Shores, West Dylan, WV 92370
+Phone: 001-887-964-0086
+CHIEF COMPLAINT:,
+
+Patient Name: Megan White
+DOB: 1943-08-07
+Address: 97691 Cantu Vi...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.065
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 78 - medications_allergies
+Query: List the medications documented for patient Robert Buck (Phone (669)903-1066x22468).
+Reference Answer: Prophylaxis: Oral ciprofloxacin given for infection prevention. Anesthesia: General laryngeal mask anesthesia. Post-operative: 24-French Foley catheter placed for clear irrigant drainage. Electrocautery used for hemostasis. No specific allergies documented in this transcription.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Robert Morales
+DOB: 1943-02-25
+Address: 89970 Boyd Land, West Sarahville, OR 86660
+Phone: 360.935.3577
+PAST MEDICAL HISTORY:, He has difficulty climbing stairs, difficulty with airline s...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.045
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 79 - medical_history
+Query: What are the chronic conditions mentioned in Robert Buck's transcription (DOB 1994-12-08)?
+Reference Answer: 59-year-old male with clinical stage Ta Nx Mx transitional cell carcinoma of urinary bladder. History includes initial transitional cell carcinoma occurrence 5 years prior, new tumor found last fall. Significant coronary artery disease requiring revascularization performed end of December prior to current procedure. Cystoscopy showed Ta papillary lesion at bladder neck anteriorly with dysplastic area in left lateral wall.
+Generated Answer: I'm sorry, but there is no patient named Robert Buck with the DOB 1994-12-08 mentioned in the provided context.
+Retrieved Context: Patient Name: Robert Bryan
+DOB: 1997-06-11
+Address: 5977 Johnson Ville, Kathyborough, IA 73391
+Phone: (805)760-0864x324
+HISTORY: , The patient is a 61-year-old male patient.  I was asked to evaluate t...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.244
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 80 - medications_allergies
+Query: List the medications documented for patient Jessica James (DOB 2006-06-05).
+Reference Answer: Anesthesia: General anesthesia administered by Department of Anesthesia. Post-operative prescriptions: Doxycycline 100 mg twice daily for 5 days, Vicodin ES 1 tablet every 4 hours as needed for pain (#30 tablets). Electrocautery used intraoperatively. Bacitracin ointment applied to surgical site. No documented allergies.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Jessica Jimenez
+DOB: 1943-06-08
+Address: 738 Maria Underpass, Vegatown, TN 06397
+Phone: 855.914.0626x50450
+CHIEF COMPLAINT:,  Falls at home.,HISTORY OF PRESENT ILLNESS:,  The patient is ...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.099
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 81 - medical_history
+Query: What are the chronic conditions mentioned in Jessica James's transcription (Phone (780)540-0793)?
+Reference Answer: 48-year-old male with large left-sided spermatocele causing significant discomfort. Spermatocele encompassed almost entirety of left epididymis with only minimal normal epididymis remaining. Patient has completed family planning and desired permanent infertility, leading to concurrent bilateral partial vasectomy.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Jessica Williams
+DOB: 2006-01-22
+Address: 969 Eugene Turnpike Apt. 389, Michaelbury, MD 68244
+Phone: 230-834-2332x7118
+REVIEW OF SYSTEMS,GENERAL/CONSTITUTIONAL: , The patient denies feve...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.122
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 82 - diagnosis
+Query: What diagnosis is documented in Matthew Marquez's transcription?
+Reference Answer: Preoperative and postoperative diagnosis: Benign prostatic hyperplasia. Operation performed: Transurethral electrosurgical resection of the prostate under general anesthesia with no complications. Severe BPH caused urinary retention and bladder stones requiring surgical intervention.
+Generated Answer: I don't know the answer.
+Retrieved Context: Patient Name: Matthew Scott
+DOB: 1970-08-04
+Address: 28136 Jessica Squares Suite 691, Scottbury, KS 28112
+Phone: (342)588-0415x089
+FINAL DIAGNOSIS/REASON FOR ADMISSION:,1.  Acute right lobar pneumonia...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.017
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 83 - diagnosis
+Query: What diagnosis is documented in Alexander Hawkins's transcription?
+Reference Answer: Preoperative and postoperative diagnosis: Bladder cancer. Operation: Transurethral resection of large bladder tumor (TURBT) under general endotracheal anesthesia. Large tumor found lateral to right ureteral opening with papillary superficial involvement and periureteral diverticulum.
+Generated Answer: The diagnosis documented in Alexander Hawkins's transcription is Bladder cancer.
+Retrieved Context: Patient Name: Alexander York
+DOB: 1951-06-08
+Address: 7411 Collier Parks Apt. 973, Deannatown, AZ 93277
+Phone: (388)775-8069
+DISCHARGE DIAGNOSES:,1.  Bilateral lower extremity cellulitis secondary to ...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.471
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 84 - medications_allergies
+Query: List the medications documented for patient Janice Hernandez (Phone +1-791-859-7416x60076).
+Reference Answer: Anesthesia: LMA (laryngeal mask airway) administered intraoperatively. Local anesthesia: Marcaine 0.25% (15 mL) applied for post-operative pain control. Surgical materials: PDS suture for hernia sac ligation, 4-0 Vicryl for testicular fixation, 5-0 Monocryl for skin closure (scrotal and inguinal), 2-0 PDS for external oblique fascia closure, 4-0 Vicryl for Scarpa fascia. Dermabond and Steri-Strips applied to incisions. No documented allergies.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Jessica Jimenez
+DOB: 1943-06-08
+Address: 738 Maria Underpass, Vegatown, TN 06397
+Phone: 855.914.0626x50450
+CHIEF COMPLAINT:,  Falls at home.,HISTORY OF PRESENT ILLNESS:,  The patient is ...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.116
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 85 - medical_history
+Query: What are the chronic conditions mentioned in Janice Hernandez's transcription (DOB 2004-06-11)?
+Reference Answer: 10-year-old male with right undescended testicle. History indicates testicle was previously seen in right hemiscrotum but appeared to be sliding, and has now become undescended as child has grown. Small associated inguinal hernia identified during surgery. Post-operative note indicates testicle was viable but smaller than contralateral side by approximately 50%, with no palpable testicular masses.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Hannah Hernandez
+DOB: 1961-08-12
+Address: 991 Jean Plaza Suite 519, South Robert, RI 45237
+Phone: 815-905-3259x8127
+HISTORY OF PRESENT ILLNESS: , This is a 91-year-old male with a previo...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.070
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 86 - medications_allergies
+Query: List the medications documented for patient Heather Bowman (DOB 1952-03-08).
+Reference Answer: Previous medication: Ditropan (discontinued due to poor effectiveness). Current medication change: Starting Sanctura XR to replace Ditropan for overactive bladder treatment. Patient has not experienced any medication side effects. No documented allergies in this transcription.
+Generated Answer: The patient Heather Bowman was previously on Ditropan but it was discontinued. The new medication started for her is Sanctura XR.
+Retrieved Context: Patient Name: Heather Bowman
+DOB: 1952-03-08
+Address: 1980 Michelle Lake, South Amytown, HI 46319
+Phone: 001-450-478-1063
+REASON FOR VISIT: , Overactive bladder with microscopic hematuria.,HISTORY OF ...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.474
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 87 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Heather Bowman (Phone 001-450-478-1063).
+Reference Answer: 1. Medication management: Discontinue Ditropan due to poor effectiveness. Start Sanctura XR as alternative anticholinergic medication for overactive bladder. 2. Follow-up monitoring: Continue scheduled follow-up appointments. Monitor urinalysis over the next year to track microscopic hematuria and overall bladder condition.
+Generated Answer: The treatment plan for patient Heather Bowman is as follows: The patient will discontinue the use of Ditropan. A different medication, Sanctura XR, will be started. The patient will be followed up as scheduled. Additionally, her urinalysis will continue to be monitored over the next year or so.
+Retrieved Context: Patient Name: Heather Bowman
+DOB: 1952-03-08
+Address: 1980 Michelle Lake, South Amytown, HI 46319
+Phone: 001-450-478-1063
+REASON FOR VISIT: , Overactive bladder with microscopic hematuria.,HISTORY OF ...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.300
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 88 - medications_allergies
+Query: List the medications documented for patient Dr. Sara Brown (DOB 1994-03-06).
+Reference Answer: Anesthesia: General inhalation anesthetic administered. Local anesthesia: 0.25% Marcaine penile block and ring block (20 mL total) given by surgeon. Intravenous fluids: 100 mL received during procedure. Skin preparation: Betadine and alcohol cleanse used for surgical site preparation. No documented allergies.
+Generated Answer: I don't know the answer.
+Retrieved Context: Patient Name: Sarah Kelly
+DOB: 1958-01-04
+Address: 573 Tamara Crossing Apt. 840, Meyerberg, TN 58342
+Phone: 931-744-3432
+SUBJECTIVE:,  The patient is a 66-year-old female who presents to the clinic to...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 0.000
+  semantic_similarity: 0.104
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 89 - summarization
+Query: Summarize the transcription for patient Dr. Sara Brown, DOB 1994-03-06, Phone 796-393-0271x30399 in 150 words.
+Reference Answer: 15-year-old male presented with paraphimosis following acute alcohol intoxication. Patient had foreskin retracted with Foley catheter placement at another institution, but medical staff forgot to reduce foreskin after catheter removal, resulting in paraphimosis with moderate swelling. Patient was taken to operating room where surgical consent and identification were verified. Under general inhalation anesthetic, manual pressure and mobilization of shaft skin successfully reduced the paraphimosis. Surgical site was cleansed with Betadine and alcohol, followed by dorsal penile block and ring block using 0.25% Marcaine (20 mL total). No tissue specimens were sent to pathology, and sponge/needle counts were not necessary. Patient tolerated procedure well with minimal complications. Post-operatively, patient was transferred to recovery room in stable condition. This case demonstrates successful non-surgical reduction of paraphimosis under anesthesia.
+Generated Answer: I'm sorry, but I can't provide the information you're asking for because there is no transcription available for a patient named Dr. Sara Brown with the DOB 1994-03-06 and phone number 796-393-0271x30399 in the provided context.
+Retrieved Context: Patient Name: Sarah Kelly
+DOB: 1958-01-04
+Address: 573 Tamara Crossing Apt. 840, Meyerberg, TN 58342
+Phone: 931-744-3432
+SUBJECTIVE:,  The patient is a 66-year-old female who presents to the clinic to...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.185
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 90 - medications_allergies
+Query: List the medications documented for patient Edward Hernandez (Phone +1-762-883-4081x57447).
+Reference Answer: Anesthesia: General inhalational anesthetic. Local anesthesia: 0.25% Marcaine for ilioinguinal nerve block and wound block, 0.5% Marcaine plain for additional local anesthesia. Intravenous fluids: 1100 mL of crystalloid. Post-operative: IV Toradol given at end of procedure for pain management. Surgical materials: 0 Vicryl suture for hernia sac ligation and fascia closure, 4-0 chromic for stay stitch and pursestring suture, 4-0 Rapide for subcuticular skin closure. Dermabond tissue adhesive applied to incisions. No documented allergies.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Edward Lee
+DOB: 1978-07-22
+Address: 66139 Shaffer Roads, Kariburgh, LA 15368
+Phone: 999.696.4527x921
+ADMISSION DIAGNOSIS: , Left hip fracture.,CHIEF COMPLAINT: , Diminished function, sec...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.132
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 91 - medical_history
+Query: What are the chronic conditions mentioned in Edward Hernandez's transcription (DOB 1980-01-06)?
+Reference Answer: 11.5-year-old male with left undescended testis found to have associated left inguinal hernia during surgery. Abnormal findings included high left undescended testis with type III epididymal attachment along with vas deferens, and communicating hernia hydrocele. Testis required retroperitoneal dissection to achieve adequate cord length for proper positioning in mid-to-low scrotum.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Christina Hernandez
+DOB: 1955-05-04
+Address: 312 Sarah Inlet, West Jose, ND 38430
+Phone: 536-914-9407
+CC: ,RLE weakness.,HX: ,This 42y/o RHM was found 2/27/95 slumped over the steering w...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 0.000
+  semantic_similarity: 0.086
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 92 - summarization
+Query: Summarize the transcription for patient Edward Hernandez, DOB 1980-01-06, Phone +1-762-883-4081x57447 in 150 words.
+Reference Answer: 11.5-year-old male underwent left inguinal hernia repair and orchiopexy for undescended testis. Initial scrotal approach was unsuccessful in accessing the high undescended testis, requiring inguinal incision. Surgery revealed communicating hernia hydrocele and type III epididymal attachment with looping vas deferens. Hernia sac was dissected and suture ligated, followed by retroperitoneal dissection to achieve adequate cord length. Testis was successfully positioned in mid-to-low scrotum with proper orientation and secured with stay stitch. Procedures included ilioinguinal nerve block and wound infiltration with Marcaine. Patient received IV Toradol post-operatively and 1100 mL crystalloid fluids. External oblique fascia was carefully reconstructed avoiding nerve entrapment. Both incisions were closed in layers with tissue adhesive applied. Patient tolerated procedure well with minimal blood loss and was transferred to recovery in stable condition.
+Generated Answer: Edward Hernandez, an 11.5-year-old boy, underwent a surgical procedure for his left undescended testis and left inguinal hernia. The operation involved a left inguinal hernia repair and left orchiopexy with Marcaine for nerve block and wound block. The testis was found to be high up in the upper canal and a communicating hernia hydrocele was identified. After dissection and suture ligation, the testis was brought into the scrotum in the proper orientation. The patient was given a local anesthetic and an ilioinguinal nerve block. The procedure was successful, with less than 5 mL of blood loss and no complications. The patient was stable and tolerated the procedure well. No tubes or drains were used during the operation. The patient was transferred to the recovery room in a stable condition.
+Retrieved Context: Patient Name: Edward Lee
+DOB: 1978-07-22
+Address: 66139 Shaffer Roads, Kariburgh, LA 15368
+Phone: 999.696.4527x921
+ADMISSION DIAGNOSIS: , Left hip fracture.,CHIEF COMPLAINT: , Diminished function, sec...
+Scores:
+  answer_accuracy: 0.800
+  factuality: 1.000
+  semantic_similarity: 0.421
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 93 - medications_allergies
+Query: List the medications documented for patient Alisha Poole (DOB 1948-05-03).
+Reference Answer: Anesthesia: General inhalational anesthetic with caudal block administered. Intravenous fluids: 100 mL of crystalloids. Post-operative: IV Toradol given for pain management. Surgical materials: 3-0 Vicryl for hernia sac suture ligation, 4-0 chromic suture for testicular fixation and pursestring closure, 4-0 chromic for subcutaneous closure. Dermabond tissue adhesive applied to incision. No documented allergies.
+Generated Answer: Sorry, I can't provide this information.
+Retrieved Context: Patient Name: Carlos Davenport
+DOB: 1935-05-28
+Address: 826 Martin Fords Apt. 454, Joyceshire, IL 49218
+Phone: +1-671-275-8723
+PROBLEM LIST:,1.  Generalized osteoarthritis and osteoporosis with very l...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 0.000
+  semantic_similarity: 0.106
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 94 - summarization
+Query: Summarize the transcription for patient Alisha Poole, DOB 1948-05-03, Phone +1-384-749-4270x37864 in 150 words.
+Reference Answer: Nearly 4-year-old male underwent right orchiopexy and inguinal hernia repair for ectopic undescended testis. Surgery performed under general anesthesia with caudal block. Upper curvilinear scrotal incision revealed testis in ectopic position within hernia sac. Testis was slightly atrophic (12mm length) with type III epididymal attachment. Hernia sac was carefully dissected from testis using traction and microsurgical techniques, then twisted and suture ligated with 3-0 Vicryl before being released into inguinal canal. Subdartos pouch was created and testis positioned properly in scrotal sac with 4-0 chromic fixation suture. Upper pouch was closed with pursestring suture. Patient received IV Toradol post-operatively with minimal blood loss. Both testes were well-descended at procedure completion. Patient tolerated surgery well and was transferred to recovery in stable condition. Dermabond tissue adhesive was applied to incision.
+Generated Answer: I don't know the answer.
+Retrieved Context: Patient Name: Allison Smith
+DOB: 1967-04-08
+Address: 82413 Cervantes Valley Suite 250, Alvaradobury, TN 16124
+Phone: 527.974.6247
+She also had EMG/nerve conduction studies since she was last seen in o...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 0.000
+  semantic_similarity: 0.073
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 95 - summarization
+Query: Summarize the transcription for patient Janice Hernandez, DOB 2004-06-11, Phone +1-791-859-7416x60076 in 150 words.
+Reference Answer: 10-year-old male underwent right orchiopexy and herniorrhaphy for undescended testicle. Patient had history of sliding testicle that became undescended as he grew. Surgery performed under LMA anesthesia with inguinal approach. External oblique fascia was opened and testis identified in distal inguinal canal. Small hernia sac was removed and ligated with PDS suture. Adequate cord length was achieved allowing testis to reach scrotal sac easily. Dartos pouch was created and testis positioned with careful attention to prevent cord torsion. Testis was viable but approximately 50% smaller than contralateral side, with no palpable masses. Multiple suture materials used including 4-0 Vicryl for testicular fixation and 5-0 Monocryl for skin closure. Local anesthesia with Marcaine 0.25% provided for post-operative pain control. Patient transferred to recovery in stable condition with post-operative instructions including activity restrictions and follow-up care.
+Generated Answer: I'm sorry, but I can't provide the information you're asking for because there is no transcription available for a patient named Janice Hernandez with the DOB 2004-06-11 and phone number +1-791-859-7416x60076 in the provided context.
+Retrieved Context: Patient Name: Jennifer Christensen
+DOB: 1937-07-20
+Address: 07227 Beard Fords Suite 523, North Richardburgh, CO 52710
+Phone: 001-524-618-2794x922
+SUBJECTIVE:,  This is a 2-year-old female who comes in...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.164
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 96 - summarization
+Query: Summarize the transcription for patient Heather Bowman, DOB 1952-03-08, Phone 001-450-478-1063 in 150 words.
+Reference Answer: 56-year-old female presents for follow-up of overactive bladder with microscopic hematuria. Previous cystoscopy was unremarkable, and renal ultrasound showed no evidence of other disease. Patient continues experiencing frequency and urgency episodes primarily during daytime with rare nighttime occurrences. No gross hematuria, dysuria, pyuria, or other obstructive/irritative voiding symptoms reported. Patient had poor response to previous Ditropan therapy. Clinical impression suggests overactive bladder with microscopic hematuria, possibly related to mild atrophic vaginitis. No other significant findings identified beyond persistent overactive bladder symptoms. Treatment plan involves discontinuing current Ditropan and initiating Sanctura XR as alternative anticholinergic medication. Patient has not experienced medication side effects previously. Long-term monitoring includes scheduled follow-up appointments and continued urinalysis surveillance over the next year to track microscopic hematuria and overall bladder condition progression.
+Generated Answer: Heather Bowman, a 56-year-old patient, visited due to an overactive bladder with microscopic hematuria. Despite an unremarkable cystoscopy, she continues to experience frequency and urgency, mostly during the day. She had been on Ditropan, which didn't work well for her. The renal ultrasound didn't show any other diseases. The impression is that her overactive bladder with microscopic hematuria is likely due to mild atrophic vaginitis. The plan is to discontinue Ditropan and start her on Sanctura XR. Her urinalysis will be monitored over the next year.
+Retrieved Context: Patient Name: Heather Bowman
+DOB: 1952-03-08
+Address: 1980 Michelle Lake, South Amytown, HI 46319
+Phone: 001-450-478-1063
+REASON FOR VISIT: , Overactive bladder with microscopic hematuria.,HISTORY OF ...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.386
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 97 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Savannah Obrien, DOB 1986-04-01, Phone 469.359.8815x1657.
+Reference Answer: 1. Bilateral orchiopexy procedure: Left side required Prentiss maneuver due to short spermatic cord, involving division of inferior epigastric artery and vein for adequate length. Creation of sub dartos pouch for testicular placement without tension. 2. Hernia repair: Left inguinal hernia sac separated from cord, twisted and suture ligated at internal ring. 3. Wound closure: Multiple layer closure with Vicryl sutures for fascial layers and chromic catgut for skin approximation. 4. Post-operative care: Application of Steri-Strips and Tegaderm to inguinal incisions, collodion to scrotal incisions. Local anesthetic infiltration with Marcaine for pain control.
+Generated Answer: The treatment plan for Savannah Obrien, DOB 1986-04-01, Phone 469.359.8815x1657, involves a surgical procedure called bilateral orchiopexy. This procedure was performed to correct the condition of bilateral undescended testes. The operation was performed under general anesthesia. The testes were located and freed with dissection, and a hernia on the left side was also addressed. The spermatic cord was quite short on the left and required a Prentiss Maneuver to achieve adequate length for scrotal placement. The testes were then placed in the upper scrotum without tension. A sub dartos pouch was created and the testes were anchored with sutures. The wounds were closed and the incisions were cleansed after completion of the procedure. The patient was then awakened and transported to the post-anesthetic recovery area. The estimated blood loss was less than 20 to 30 mL.
+Retrieved Context: Patient Name: Stephanie Gomez
+DOB: 1944-02-11
+Address: 5594 John Stream Suite 547, North Nancy, GA 55611
+Phone: 6495090981
+REASON FOR VISIT: , This is a cosmetic consultation.,HISTORY OF PRESENT ILLNE...
+Scores:
+  answer_accuracy: 0.900
+  factuality: 1.000
+  semantic_similarity: 0.227
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 98 - treatment_plan
+Query: Provide a detailed treatment plan from the transcription for patient Joseph Little, DOB 2004-09-24, Phone 904.921.5476x55513.
+Reference Answer: 1. Diagnostic evaluation: Examination under anesthesia and diagnostic laparoscopy to locate undescended testis. 2. Surgical intervention: Right orchiectomy due to atrophic testicular remnant with no viable tissue found. Left testis fixation with subdartos pouch closure using pursestring suture. 3. Anesthesia management: General inhalation anesthetic with caudal block for pain control. 4. Post-operative care: IV Toradol for pain management, Dermabond tissue adhesive applied to incisions. Proper testicular positioning confirmed at procedure completion.
+Generated Answer: The treatment plan for patient Joseph Little, DOB 2004-09-24, Phone 904.921.5476x55513, involved a surgical procedure to address his nonpalpable right undescended testis. The procedures included an examination under anesthesia, diagnostic laparoscopy, right orchiectomy, and left testis fixation. The patient was anesthetized and a caudal block was placed. The right testis was not palpable despite multiple attempts to check. 
+
+The patient was then sterilely prepped and draped, and an 8-French feeding tube was placed within his bladder through the urethra. The infraumbilical area was incised, and the peritoneum was entered with a 5-mm one-step system. The abdomen was insufflated with carbon dioxide to a pressure of 12 mmHg. 
+
+Because no testis was found in the abdomen, the gas was evacuated and the fascial sheath was closed. A curvilinear upper scrotal incision was made on the right, and the tunica vaginalis was visualized and dissected up towards the external ring. There was no apparent testicular tissue, but it was removed and the cord structure was tied off. 
+
+A similar curvilinear incision was made on the left side for testicular fixation. The testis was delivered into the field and was larger than expected for the patient's age. The upper aspect of the subdartos pouch was closed and the testis was placed back into the scrotum in the proper orientation. 
+
+At the end of the procedure, the patient received IV Toradol and had Dermabond tissue adhesive placed on both incisions. The left testis was well descended in the scrotum at the end of the procedure. The patient tolerated the procedure well and was in stable condition upon transfer to the recovery room.
+Retrieved Context: Patient Name: Joseph Little
+DOB: 2004-09-24
+Address: 85435 Brown Mountains, Lake Denisebury, CO 24104
+Phone: 904.921.5476x55513
+PREOPERATIVE DIAGNOSIS:,  Nonpalpable right undescended testis.,POSTOPER...
+Scores:
+  answer_accuracy: 1.000
+  factuality: 1.000
+  semantic_similarity: 0.268
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 99 - medical_history
+Query: What are the chronic conditions mentioned in patient Sandra Young's transcription (DOB 1963-06-21)?
+Reference Answer: The patient had an undescended testicle with associated inguinal hernia. The testicle had abnormal attachments and was tethered by lateral cord vessel attachments to the retroperitoneal sidewalls, requiring surgical mobilization for proper scrotal positioning.
+Generated Answer: I don't know the answer.
+Retrieved Context: Patient Name: Sandra Ford
+DOB: 1974-09-16
+Address: 81332 Rivera Centers Suite 903, West Karenbury, SC 96852
+Phone: 966-458-0449x703
+HISTORY OF PRESENT ILLNESS:,  This is a 53-year-old widowed woman, s...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.087
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+
+Test Case 100 - medications_allergies
+Query: List the medications and allergies documented for patient Sandra Young (Phone +1-765-941-1490x95228).
+Reference Answer: Medications used during procedure: Local anesthetic (not specified), caudal block anesthetic. Post-operative: Benzoin applied topically. Suture materials: 3-0 silk, 4-0 Vicryl, 4-0 chromic, 6-0 chromic. No allergies documented in the transcription.
+Generated Answer: Sorry, I can't provide this information because there is no medical record available for a patient named Sandra Young with the phone number +1-765-941-1490x95228 in the provided context.
+Retrieved Context: Patient Name: Sandra Richmond
+DOB: 1966-07-20
+Address: 0212 Teresa Flats, Mirandaburgh, NC 55988
+Phone: (773)930-2121x155
+HISTORY OF PRESENT ILLNESS:  ,This 59-year-old white male is seen for comprehe...
+Scores:
+  answer_accuracy: 0.000
+  factuality: 1.000
+  semantic_similarity: 0.325
+  precision@k: 0.000
+  recall@k: 0.000
+  mrr@k: 0.167
+------------------------------------------------------------
+

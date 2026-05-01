@@ -13,6 +13,9 @@ dotenv = "*"
 langchain-community = "*"
 langchain-ollama = "*"
 openai = {extras = ["datalib"], version = "*"}
+sentence-transformers = "*"
+scikit-learn = "*"
+nltk = "*"
 
 [dev-packages]
 
